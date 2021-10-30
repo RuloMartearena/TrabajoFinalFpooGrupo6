@@ -4,7 +4,7 @@ class Family extends GameObject {
   // ------------------ Zona de atributos ----------------- //
 
   /** Representa la relacion de composicion con la clase FamilyList */
-  private FamilyList[] familiar;
+  private FamilyList[] kin;
 
   // ------------------ Zona de constructores ----------------- //
 
@@ -13,7 +13,7 @@ class Family extends GameObject {
     this.position = position;
     this.colorObject = colorObject;
     this.radius = radius;
-    familiar = new FamilyList[2];
+    kin = new FamilyList[2];
   }
 
   // ------------------ Zona de operaciones ----------------- //
@@ -26,6 +26,9 @@ class Family extends GameObject {
   }
   /** Detecta la colision entre objetos de tipo Famili y objetos de tipo Maincharacter */
   public void collision(MainCharacter personaje) {
+  }
+  /** Hace que el familiar sigua al personaje */
+  public void follow() {
   }
 
   // ------------------ Zona de metodos ----------------- //

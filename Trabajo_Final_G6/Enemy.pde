@@ -1,12 +1,13 @@
 /** Crea una clase de nombre Enemy */
-class Enemy extends GameObject {
+class Enemy extends FrameObject {
 
   // ------------------ Zona de Atributos ------------------- //
 
   /** Representa la velocidad de Enemy */
   private float velocity;
   /** Representa la relación de la composicion con la clase EnemyList */
-  private EnemyList[] enemigo;
+  private EnemyList[] enemies;
+
   // ------------------ Zona de Constructores ------------------- //
 
   /** Constructor parametrizado */
@@ -15,8 +16,9 @@ class Enemy extends GameObject {
     this.position = position;
     this.colorObject = colorObject;
     this.radius = radius;
-    enemigo = new EnemyList[8];
+    enemies = new EnemyList[8];
   }
+
   // ------------------ Zona de Operaciones ------------------- //
 
   /** Permite mostrar al enemigo en el lienzo */
@@ -27,6 +29,9 @@ class Enemy extends GameObject {
   }
   /** Permite la colision entre el enemigo y el personaje */
   public void collision(MainCharacter personaje) {
+  }
+  /** Realiza la animacion de atacar cuando detecta la colision */
+  public void attack() {
   }
 
   // ------------------ Zona de Metodos ------------------- //

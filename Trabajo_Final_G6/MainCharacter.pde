@@ -27,6 +27,9 @@ class MainCharacter extends GameObject {
   /** Permite detectar la colision entre un objeto de tipo MainCharacter y un objeto de tipo Labyrinth */
   public void collision(Labyrinth laberinto) {
   }
+  /** Detecta cuando el personaje rescata a un familiar */
+  public void rescue() {
+  }
 
   // -------------------- Zona de metodos --------------- //
 
