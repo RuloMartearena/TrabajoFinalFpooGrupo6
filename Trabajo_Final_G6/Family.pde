@@ -7,9 +7,9 @@ class Family extends GameObject {
   // ------------------ Zona de constructores ----------------- //
 
   /** Constructor en blanco */
-  public Family(PVector position, color colorObject, int radius) {
+  public Family(PVector position, int radius) {
     this.position = position;
-    this.colorObject = colorObject;
+    this.colorObject = #7B236D;
     this.radius = radius;
   }
 
@@ -18,7 +18,7 @@ class Family extends GameObject {
   /** Permite dibujar un objeto de tipo Family */
   public void display(){
     noStroke(); // saca los bordes a la forma
-    fill(#7B236D); // color del family (purpura)
+    fill(this.colorObject); // color del family (purpura)
     circle(this.position.x, this.position.y, this.radius*2);
   }
   /** Permite que un objeto de tipo Family se mueva */

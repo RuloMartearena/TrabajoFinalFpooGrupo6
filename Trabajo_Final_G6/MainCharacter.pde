@@ -9,9 +9,9 @@ class MainCharacter extends GameObject {
   // ----------------- Zona de constructores ---------------- //
 
   /** Constructor parametrizado */
-  public MainCharacter(PVector position, color colorObject, int radius, boolean life) {
+  public MainCharacter(PVector position, int radius, boolean life) {
     this.position = position;
-    this.colorObject = colorObject;
+    this.colorObject = 255;
     this.radius = radius;
     this.life = life;
   }
@@ -21,8 +21,8 @@ class MainCharacter extends GameObject {
   /** Dibuja un personaje */
   public void display() {
     noStroke(); // saca los bordes a la forma
-    fill(255); // color del personaje (blanco)
-    ellipse(this.position.x, this.position.y, this.radius*2, this.radius*2); // dibuja al personaje principal
+    fill(this.colorObject); // color del personaje (blanco)
+    circle(this.position.x, this.position.y, this.radius*2); // dibuja al personaje principal
   }
 
   /** Mueve el personaje */
