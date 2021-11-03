@@ -12,6 +12,8 @@ public void setup() {
   enemy.setHeightFrame(200);
   enemy.setWidthFrame(200);
   enemy.setPosition(new PVector(width/4, height-enemy.getHeightFrame()));
+  character = new MainCharacter(new PVector(width/2, height/2), 5);
+  family = new Family (new PVector(random(width), random(height)), 5);
 }
 
 // ---------- Zona del draw ------------ //
