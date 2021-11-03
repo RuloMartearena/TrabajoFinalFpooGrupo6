@@ -11,7 +11,7 @@ public void setup() {
 
 // ---------- Zona del draw ------------ //
 public void draw() {
-  background(0);
+  background(#171717); // color gris oscuro
   character.move();
   family.display();
 }
