@@ -3,8 +3,6 @@ class Family extends GameObject {
 
   // ------------------ Zona de atributos ----------------- //
 
-  /** Representa la relacion de composicion con la clase FamilyList */
-  private FamilyList[] kin;
 
   // ------------------ Zona de constructores ----------------- //
 
@@ -13,7 +11,6 @@ class Family extends GameObject {
     this.position = position;
     this.colorObject = colorObject;
     this.radius = radius;
-    kin = new FamilyList[2];
   }
 
   // ------------------ Zona de operaciones ----------------- //

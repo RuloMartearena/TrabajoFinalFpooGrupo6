@@ -6,7 +6,6 @@ class Enemy extends FrameObject {
   /** Representa la velocidad de Enemy */
   private float velocity;
   /** Representa la relación de la composicion con la clase EnemyList */
-  private EnemyList[] enemies;
 
   // ------------------ Zona de Constructores ------------------- //
 
@@ -16,7 +15,6 @@ class Enemy extends FrameObject {
     this.position = position;
     this.colorObject = colorObject;
     this.radius = radius;
-    enemies = new EnemyList[8];
   }
 
   // ------------------ Zona de Operaciones ------------------- //
