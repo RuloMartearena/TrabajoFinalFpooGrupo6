@@ -16,7 +16,10 @@ class Family extends GameObject {
   // ------------------ Zona de operaciones ----------------- //
 
   /** Permite dibujar un objeto de tipo Family */
-  public void display() {
+  public void display(){
+    noStroke(); // saca los bordes a la forma
+    fill(#7B236D); // color del family (purpura)
+    circle(this.position.x, this.position.y, this.radius*2);
   }
   /** Permite que un objeto de tipo Family se mueva */
   public void move() {
