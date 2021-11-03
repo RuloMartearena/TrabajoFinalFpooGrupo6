@@ -8,8 +8,14 @@ class FrameObject extends GameObject {
   protected int widthFrame;
   /** Representa el alto del sprite */
   protected int heightFrame;
+  /** Representa la posicion en X del sprite*/
+  protected int positionFrameX;
+  /** Representa la posicion en Y del sprite*/
+  protected int positionFrameY;
   /** Representa la imagen que será el sprite */
   protected PImage sprites;
+
+  protected int cantFrames; //cantidada de veces que se muestran los frames
 
   // ------------------ Zona de constructores ----------------- //
 
@@ -21,6 +27,8 @@ class FrameObject extends GameObject {
 
   /** Permite que se dibuje el sprite */
   public void display() {
+    imageMode(CENTER);
+    image(this.sprites, this.position.x, this.position.y, this.widthFrame, this.heightFrame);
   }
   /**¨Permite que el sprite se mueva */
   public void move() {
