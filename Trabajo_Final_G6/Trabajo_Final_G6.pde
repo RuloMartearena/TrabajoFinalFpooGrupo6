@@ -5,7 +5,7 @@ private Family family;
 // ---------- Zona del setup -------------- //
 public void setup() {
   size(1200, 700); 
-  character = new MainCharacter(new PVector(width/2, height/2), 5, true);
+  character = new MainCharacter(new PVector(width/2, height/2), 5);
   family = new Family (new PVector(random(width), random(height)), 5);
 }
 

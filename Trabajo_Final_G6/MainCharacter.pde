@@ -9,11 +9,11 @@ class MainCharacter extends GameObject {
   // ----------------- Zona de constructores ---------------- //
 
   /** Constructor parametrizado */
-  public MainCharacter(PVector position, int radius, boolean life) {
+  public MainCharacter(PVector position, int radius) {
     this.position = position;
     this.colorObject = 255;
     this.radius = radius;
-    this.life = life;
+    this.life = true;
   }
 
   // -------------------- Zona de operaciones -------------- //
