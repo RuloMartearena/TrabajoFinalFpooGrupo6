@@ -11,7 +11,7 @@ class MainCharacter extends GameObject {
   /** Constructor parametrizado */
   public MainCharacter(PVector position, int radius) {
     this.position = position;
-    this.colorObject = 255;
+    this.colorObject = #E047E3; // (rosa)
     this.radius = radius;
     this.life = true;
   }
