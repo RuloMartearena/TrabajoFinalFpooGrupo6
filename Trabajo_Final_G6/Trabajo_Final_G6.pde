@@ -6,14 +6,13 @@ private Enemy enemy;
 // ---------- Zona del setup -------------- //
 public void setup() {
   size(1200, 700); 
-  character = new MainCharacter(new PVector(width/2, height/2), 7, 7, true);
-  family = new Family (new PVector(random(width), random(height)), #7B236D, 7); 
-  enemy = new Enemy();
+  //frameRate(3);
+  character = new MainCharacter(new PVector(width/2, height/2), 5);
+  family = new Family (new PVector(random(width), random(height)), 5);
+  enemy = new Enemy(new PVector (width/3, height/3));
   enemy.setHeightFrame(200);
   enemy.setWidthFrame(200);
   enemy.setPosition(new PVector(width/4, height-enemy.getHeightFrame()));
-  character = new MainCharacter(new PVector(width/2, height/2), 5);
-  family = new Family (new PVector(random(width), random(height)), 5);
 }
 
 // ---------- Zona del draw ------------ //
