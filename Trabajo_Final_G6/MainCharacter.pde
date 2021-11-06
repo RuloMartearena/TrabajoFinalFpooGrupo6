@@ -5,15 +5,18 @@ class MainCharacter extends GameObject {
 
   /** Representa si el objeto esta "vivo" */
   private boolean life;
+  /* Representa el mapa del laberinto que tiene el jugador */
+  Labyrinth maze;
 
   // ----------------- Zona de constructores ---------------- //
 
   /** Constructor parametrizado */
-  public MainCharacter(PVector position, int radius) {
+  public MainCharacter(PVector position, int radius, Labyrinth maze) {
     this.position = position;
     this.colorObject = #E047E3; // (rosa)
     this.radius = radius;
     this.life = true;
+    this.maze = maze;
   }
 
   // -------------------- Zona de operaciones -------------- //
@@ -21,47 +24,29 @@ class MainCharacter extends GameObject {
   /** Dibuja un personaje */
   public void display() {
     noStroke(); // saca los bordes a la forma
-    fill(this.colorObject); // color del personaje (blanco)
+    fill(this.colorObject); // color del personaje (rosa)
     circle(this.position.x, this.position.y, this.radius*2); // dibuja al personaje principal
   }
 
   /** Mueve el personaje */
-  public void move() {
-    display();
-    if (keyPressed) {
-      if (key=='w' || key=='W') {
-        this.position.y = this.position.y -5;
-      }
-      if (key=='s' || key=='S') {
-        this.position.y = this.position.y +5;
-      }
-      if (key=='a' || key=='A') {
-        this.position.x = this.position.x -5;
-      }
-      if (key=='d' || key=='D') {
-        this.position.x = this.position.x +5;
-      }
-    }
-    if (this.position.x <= 0) {
-      this.position.x = 0 + this.radius;
-    }
-    if (this.position.x >= width) {
-      this.position.x = width - this.radius;
-    }
-    if (this.position.y <= 0) {
-      this.position.y = 0 + this.radius;
-    }
-    if (this.position.y >= height) {
-      this.position.y = height - this.radius;
-    }
-  }
+  public void move(float moveX, float moveY) {
+    float newX = this.position.x + moveX;
+    float newY = this.position.y + moveY;
 
-  /** Permite detectar la colision entre un objeto de tipo MainCharacter y un objeto de tipo Labyrinth */
-  public void collision(Labyrinth laberinto) {
-  }
-
-  /** Detecta cuando el personaje rescata a un familiar */
-  public void rescue() {
+    // Compruebo limites del mapa
+    if (newX>=0 && newX<maze.widthMaze && newY>=0 && newY<maze.heightMaze) {
+      // comprueba los muros
+      if (
+        (moveX == 1 && maze.celdas[x][y].rightWall == false) || // Derecha
+        (moveY == -1 && maze.celdas[x][y].upWall == false) ||      // Arriba
+        (moveX == -1 && maze.celdas[x-1][y].rightWall == false) ||   // Izquierda
+        (moveY == 1 && maze.celdas[x][y+1].upWall == false))
+      {
+        // si todo esta bien mueve
+        this.position.x = newX;
+        this.position.y = newY;
+      }
+    }
   }
 
   // -------------------- Zona de metodos --------------- //

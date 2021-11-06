@@ -14,9 +14,9 @@ class Cell {
 
   /* Constructor por defecto */
   public Cell() {
-    upWall = true;
-    rightWall = true;
-    visited = false;
+    this.upWall = true;
+    this.rightWall = true;
+    this.visited = false;
   }
 
   // ------- Zona de operaciones ------- //

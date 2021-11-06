@@ -4,9 +4,9 @@ class Vector {
   // ------- Zona de atributos ------- //
 
   /* Representa la posicion en X */
-  private int posX;
+  int posX;
   /* Representa la posicion en Y */
-  private int posY;
+  int posY;
 
   // ------- Zona de constructores ------- //
 

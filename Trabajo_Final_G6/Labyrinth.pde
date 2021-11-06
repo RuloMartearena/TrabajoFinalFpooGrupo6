@@ -5,7 +5,6 @@ class Labyrinth {
 
   /* Representa las celdas a modo de array, tambien representa la relacion de asociacion con la clase Celda */
   private Cell[][] celdas;
-  /* Representa la posicion anterior y la relacion de asociacion con la clase Vector */
   /* Representa el ancho del laberinto */
   private int widthMaze;
   /* Representa el alto del laberinto */
@@ -17,7 +16,14 @@ class Labyrinth {
   public Labyrinth(int widthMaze, int heightMaze) {
     this.widthMaze = widthMaze;
     this.heightMaze = heightMaze;
+    /* Array de celdas */
     celdas = new Cell[widthMaze][heightMaze];
+    resetLabyrinth();
+  }
+
+  // ------- Zona de operaciones ------- //
+
+  public void resetLabyrinth() {
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
         celdas[i][j] = new Cell();
@@ -25,10 +31,8 @@ class Labyrinth {
     }
   }
 
-  // ------- Zona de operaciones ------- //
-
   /* Genera el laberinto con un AutoWalker*/
-  public boolean moving(int x, int y, int prevX, int prevY) { // Los parametros son la posicion inicial y la posicion anterior
+  boolean moving(int x, int y, int prevX, int prevY) { // Los parametros son la posicion inicial y la posicion anterior
     if (x<0 || x>=this.widthMaze || y<0 || y>=this.heightMaze || celdas[x][y].visited==true) { // o si la celda ya fue visitada
       // No puede moverse
       return false;
@@ -36,10 +40,18 @@ class Labyrinth {
       // Puede moverse
       celdas[x][y].visited=true;
       // El AutoWalker rompe muros
-      if (x>prevX) celdas[prevX][prevY].rightWall=false;
-      if (x<prevX) celdas[x][y].rightWall=false;
-      if (y<prevY) celdas[prevX][prevY].upWall=false;
-      if (y>prevY) celdas[x][y].upWall=false;
+      if (x > prevX) { 
+        celdas[prevX][prevY].rightWall=false;
+      }
+      if (x < prevX) { 
+        celdas[x][y].rightWall=false;
+      }
+      if (y < prevY) { 
+        celdas[prevX][prevY].upWall=false;
+      }
+      if (y > prevY) { 
+        celdas[x][y].upWall=false;
+      }
 
       /* El AutoWalker elige una dirreccion aleatoria */
       // Array de 4 direcciones (Vectores)
@@ -66,8 +78,8 @@ class Labyrinth {
         moving(x+dirs[0].posX, y+dirs[0].posY, x, y) == false &&
         moving(x+dirs[1].posX, y+dirs[1].posY, x, y) == false &&
         moving(x+dirs[2].posX, y+dirs[2].posY, x, y) == false &&
-        moving(x+dirs[3].posX, y+dirs[3].posY, x, y) == false
-        ) {     
+        moving(x+dirs[3].posX, y+dirs[3].posY, x, y) == false)
+      {     
         return false;
       }
       return true;
@@ -76,9 +88,9 @@ class Labyrinth {
 
   /* Dibuja el laberinto */
   public void display() {
-    translate(50, 50); // deja un espacio entre los bordes del laberinto (modificable)
     stroke(255); // Color del laberinto (blanco)
     strokeWeight(3); // ancho de las lineas (no modificable)
+    translate(10, 50); // deja un espacio entre los bordes del laberinto (modificable)
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
         pushMatrix();
