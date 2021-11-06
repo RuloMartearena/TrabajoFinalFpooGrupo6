@@ -90,7 +90,7 @@ class Labyrinth {
   public void display() {
     stroke(255); // Color del laberinto (blanco)
     strokeWeight(3); // ancho de las lineas (no modificable)
-    translate(10, 50); // deja un espacio entre los bordes del laberinto (modificable)
+    translate(50, 50); // deja un espacio entre los bordes del laberinto (modificable)
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
         pushMatrix();
