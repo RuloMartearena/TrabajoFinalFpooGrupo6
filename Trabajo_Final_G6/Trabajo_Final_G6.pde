@@ -12,7 +12,7 @@ public void setup() {
   family = new Family (new PVector((int)random(maze.getWidthMaze()),(int)random(maze.getHeightMaze())), 5);
   enemy = new Enemy(new PVector (width/3, height/3));
   enemy.setHeightFrame(200);
-  enemy.setWidthFrame(200);
+  enemy.setWidthFrame(191);
   enemy.setPosition(new PVector(width/4, height-enemy.getHeightFrame()));
 }
 
@@ -25,6 +25,7 @@ public void draw() {
   family.display();
   enemy.display(); //visualiza al enemigo
   enemy.move(); //muestra el movimiento del enemigo
+  frameRate(10);
 }
 
 void keyPressed() {

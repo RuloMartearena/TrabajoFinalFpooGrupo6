@@ -14,7 +14,7 @@ class FrameObject extends GameObject {
   protected int positionFrameY;
   /** Representa la imagen que será el sprite */
   protected PImage sprites;
-  /** Representa la cantidada de veces que se muestran los frames */
+  /** Representa la cantidad de veces que se muestran los frames */
   protected int cantFrames; 
 
   // ------------------ Zona de constructores ----------------- //
