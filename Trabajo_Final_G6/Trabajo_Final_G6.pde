@@ -9,7 +9,7 @@ public void setup() {
   size(1200, 700); 
   maze = new Labyrinth(73, 40); // crea el objeto de Laberinto asigandole un tamaño a cada cuadro del laberinto, el tamaño es variable, se puede cambiar a gusto
   character = new MainCharacter(0, 0, 5, maze);
-  family = new Family (new PVector(random(width), random(height)), 5);
+  family = new Family (new PVector((int)random(maze.getWidthMaze()),(int)random(maze.getHeightMaze())), 5);
   enemy = new Enemy(new PVector (width/3, height/3));
   enemy.setHeightFrame(200);
   enemy.setWidthFrame(200);
