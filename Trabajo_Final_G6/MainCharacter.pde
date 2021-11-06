@@ -34,7 +34,8 @@ class MainCharacter extends GameObject {
     float newY = this.position.y + moveY;
 
     // Compruebo limites del mapa
-    if (newX>=0 && newX<maze.widthMaze && newY>=0 && newY<maze.heightMaze) {
+    if (newX>=0 && newX<maze.widthMaze && 
+      newY>=0 && newY<maze.heightMaze) {
       // comprueba los muros
       if (
         (moveX == 1 && maze.celdas[x][y].rightWall == false) || // Derecha
