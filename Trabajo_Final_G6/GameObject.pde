@@ -22,7 +22,7 @@ abstract class GameObject {
   abstract public void display();
 
   /** Metodo abstracto mover */
-  abstract public void move();
+  /* abstract public void move(); */
 
   // -------------- Zona de metodos ------------------- //
 
