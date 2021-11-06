@@ -9,14 +9,14 @@ class Enemy extends FrameObject {
 
   // ------------------ Zona de Constructores ------------------- //
   public Enemy(PVector position) {
-    this.sprites = requestImage("resources/images/SlimeEnemy.png");
+    this.sprites = requestImage("resources/images/SlimeEnemy2.png");
     this.position = position;
-    this.widthFrame = 200;
+    this.widthFrame = 190;
     this.heightFrame = 200;
     this.positionFrameX = 0;
     this.positionFrameY = 0;
-    this.velocity = new PVector(0, 10);
-    cantFrames =12;
+    this.velocity = new PVector(0, 6);
+    this.cantFrames =10;
   }
 
   /** Constructor parametrizado */
@@ -36,11 +36,12 @@ class Enemy extends FrameObject {
     frame.resize(40, 40);
     imageMode(CENTER);
     image(frame, this.position.x, this.position.y);
+    
 
     if (this.positionFrameX < sprites.width-this.widthFrame) {
       positionFrameX+= this.widthFrame;
     } else {
-      positionFrameX=0;
+      positionFrameX=width/2;
     }
   }
 
@@ -48,7 +49,7 @@ class Enemy extends FrameObject {
   public void move() {
     this.position.add(this.velocity);
     //println(position.y);
-    if (position.y > (height-200)|| position.y < 220) {
+    if (position.y > (height-190)|| position.y < 190) {
       velocity.y = velocity.y * (-1);
     }
   }
