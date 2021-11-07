@@ -20,7 +20,6 @@ class Enemy extends FrameObject {
     this.velocity = new PVector (0, 6);
   }
 
-
   // ------------------ Zona de Operaciones ------------------- //
 
   /** Permite mostrar al enemigo en el lienzo */

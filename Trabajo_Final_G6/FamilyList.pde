@@ -5,6 +5,7 @@ class FamilyList {
   private FamilyList[] kin;
 
   // ------------------ Zona de constructores ----------------- //
+  
   public FamilyList() {
     kin = new FamilyList[2];
   } 
