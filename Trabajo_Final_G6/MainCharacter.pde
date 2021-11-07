@@ -3,14 +3,10 @@ class MainCharacter extends GameObject {
 
   // ---------------- Zona de atributos ------------------- //
 
-  /* Representa la posicion en x del jugador */
-  private int positionX;
-  /* Representa la posicion en y del jugador */
-  private int positionY;
   /** Representa si el objeto esta "vivo" */
   private boolean life;
   /* Representa el mapa del laberinto que tiene el jugador */
-  Labyrinth maze;
+  private Labyrinth maze;
 
 
   // ----------------- Zona de constructores ---------------- //

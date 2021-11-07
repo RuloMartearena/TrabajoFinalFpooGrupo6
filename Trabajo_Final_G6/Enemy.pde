@@ -5,9 +5,9 @@ class Enemy extends FrameObject {
 
   /** Representa la velocidad de Enemy */
   private PVector velocity;
-  /** Representa la relación de la composicion con la clase EnemyList */
 
   // ------------------ Zona de Constructores ------------------- //
+
   public Enemy(PVector position) {
     this.sprites = requestImage("resources/images/SlimeEnemy2.png");
     this.position = position;
@@ -15,18 +15,10 @@ class Enemy extends FrameObject {
     this.heightFrame = 200;
     this.positionFrameX = 0;
     this.positionFrameY = 0;
-    this.velocity = new PVector(0, 6);
-    this.cantFrames =10;
+    this.positionX = 0;
+    this.positionY = 0;
+    this.velocity = new PVector (0, 6);
   }
-
-  /** Constructor parametrizado */
-  public Enemy(PVector velocity, PVector position, color colorObject, int radius) {
-    this.velocity = velocity;
-    this.position = position;
-    this.colorObject = colorObject;
-    this.radius = radius;
-  }
-
 
   // ------------------ Zona de Operaciones ------------------- //
 
@@ -35,8 +27,7 @@ class Enemy extends FrameObject {
     PImage frame = sprites.get(this.positionFrameX, this.positionFrameY, this.widthFrame, this.heightFrame);
     frame.resize(40, 40);
     imageMode(CENTER);
-    image(frame, this.position.x, this.position.y);
-    
+    image(frame, this.positionX, this.positionY);
 
     if (this.positionFrameX < sprites.width-this.widthFrame) {
       positionFrameX+= this.widthFrame;
@@ -48,7 +39,6 @@ class Enemy extends FrameObject {
   /** Permite el movimiento del enemigo */
   public void move() {
     this.position.add(this.velocity);
-    //println(position.y);
     if (position.y > (height-190)|| position.y < 190) {
       velocity.y = velocity.y * (-1);
     }
