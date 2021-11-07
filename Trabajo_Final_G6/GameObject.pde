@@ -3,8 +3,10 @@ abstract class GameObject {
 
   // ---------------- Zona de atributos ------------------- //
 
-  /** Representa la posicion de los objetos */
-  protected PVector position;
+  /** Representa la posicion en X de los objetos */
+  protected Integer positionX;
+  /** Representa la posicion en Y de los objetos */
+  protected Integer positionY;
   /** Representa el color de los objetos */
   protected color colorObject;
   /** Representa el radio de los objetos */
@@ -21,18 +23,23 @@ abstract class GameObject {
   /** Metodo abstracto display */
   abstract public void display();
 
-  /** Metodo abstracto mover */
-  /* abstract public void move(); */
-
   // -------------- Zona de metodos ------------------- //
 
   /** Cambia el valor del atributo posicion */
-  public void setPosition(PVector position) {
-    this.position = position; // Establece el valor del atributo
+  public void setPositionX (int positionX) {
+    this.positionX = positionX; // Establece el valor del atributo
   }
   /** Retorna el valor del atributo posicion */
-  public PVector getPosition() {
-    return this.position;
+  public Integer getPositionX() {
+    return this.positionX;
+  }
+  /** Cambia el valor del atributo posicion */
+  public void setPositionY (int positionY) {
+    this.positionY = positionY; // Establece el valor del atributo
+  }
+  /** Retorna el valor del atributo posicion */
+  public Integer getPositionY() {
+    return this.positionY;
   }
   /** Cambia el valor del atributo colorObject */
   public void setColorObject(color colorObject) {

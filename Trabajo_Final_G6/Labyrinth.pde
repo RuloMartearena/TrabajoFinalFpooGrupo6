@@ -9,6 +9,8 @@ class Labyrinth {
   private int widthMaze;
   /* Representa el alto del laberinto */
   private int heightMaze;
+  /* Representa el color del laberinto */
+  private color colorMaze;
 
   // ------- Zona de constructores ------- //
 
@@ -16,6 +18,7 @@ class Labyrinth {
   public Labyrinth(int widthMaze, int heightMaze) {
     this.widthMaze = widthMaze;
     this.heightMaze = heightMaze;
+    this.colorMaze = 255;
     /* Array de celdas */
     celdas = new Cell[widthMaze][heightMaze];
     resetLabyrinth();
@@ -88,7 +91,7 @@ class Labyrinth {
 
   /* Dibuja el laberinto */
   public void display() {
-    stroke(255); // Color del laberinto (blanco)
+    stroke(this.colorMaze); // Color del laberinto (blanco)
     strokeWeight(3); // ancho de las lineas (no modificable)
     translate(50, 50); // deja un espacio entre los bordes del laberinto (modificable)
     for (int i = 0; i<widthMaze; i++) {

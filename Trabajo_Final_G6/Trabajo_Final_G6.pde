@@ -1,19 +1,20 @@
 // ----------- Zona de variables globales ----------- //
-MainCharacter character;
-Family family;
-Enemy enemy;
-Labyrinth maze; 
+private MainCharacter character;
+private Family family;
+private Enemy enemy;
+private Labyrinth maze; 
 
 // ---------- Zona del setup -------------- //
 public void setup() {
   size(1200, 700); 
   maze = new Labyrinth(73, 40); // crea el objeto de Laberinto asigandole un tamaño a cada cuadro del laberinto, el tamaño es variable, se puede cambiar a gusto
+
   character = new MainCharacter(0, 0, 5, maze);
-  family = new Family (new PVector((int)random(maze.getWidthMaze()),(int)random(maze.getHeightMaze())), 5);
-  enemy = new Enemy(new PVector (width/3, height/3));
-  enemy.setHeightFrame(200);
-  enemy.setWidthFrame(191);
-  enemy.setPosition(new PVector(width/4, height-enemy.getHeightFrame()));
+
+  family = new Family ((int)random(maze.getWidthMaze()), (int)random(maze.getHeightMaze()), 5);
+
+  enemy = new Enemy(new PVector(width/3, height/3));
+  enemy.setPosition(new PVector (width/4, height-enemy.getHeightFrame()));
 }
 
 // ---------- Zona del draw ------------ //
@@ -25,7 +26,6 @@ public void draw() {
   family.display();
   enemy.display(); //visualiza al enemigo
   enemy.move(); //muestra el movimiento del enemigo
-  frameRate(10);
 }
 
 void keyPressed() {

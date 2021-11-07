@@ -7,8 +7,9 @@ class Family extends GameObject {
   // ------------------ Zona de constructores ----------------- //
 
   /** Constructor en blanco */
-  public Family(PVector position, int radius) {
-    this.position = position;
+  public Family(int positionX, int positionY, int radius) {
+    this.positionX = positionX;
+    this.positionY = positionY;
     this.colorObject = #7B236D;
     this.radius = radius;
   }
@@ -19,16 +20,10 @@ class Family extends GameObject {
   public void display() {
     noStroke(); // saca los bordes a la forma
     fill(this.colorObject); // color del family (purpura)
-    circle(this.position.x*15+8, this.position.y*15+8, this.radius*2);
-  }
-  /** Permite que un objeto de tipo Family se mueva */
-  public void move() {
+    circle(this.positionX*15+8, this.positionY*15+8, this.radius*2);
   }
   /** Detecta la colision entre objetos de tipo Famili y objetos de tipo Maincharacter */
   public void collision(MainCharacter personaje) {
-  }
-  /** Hace que el familiar sigua al personaje */
-  public void follow() {
   }
 
   // ------------------ Zona de metodos ----------------- //
