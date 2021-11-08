@@ -24,8 +24,6 @@ class Menus {
   public void displayWin() {
     textSize(50);
     text(Constants.WIN, 230, height/2);
-    textSize(15);
-    text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 
   /* Muentra el mensaje cuando moris */
