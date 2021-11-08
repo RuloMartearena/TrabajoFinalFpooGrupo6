@@ -1,3 +1,8 @@
+
+import ddf.minim.*;
+Minim minim;
+AudioPlayer player;
+
 // ----------- Zona de variables globales ----------- //
 private MainCharacter character;
 private Family family;
@@ -6,7 +11,10 @@ private Labyrinth maze;
 
 // ---------- Zona del setup -------------- //
 public void setup() {
-  size(1200, 700); 
+  size(1200, 700);
+  minim = new Minim(this);
+  player = minim.loadFile("lofibits.mp3");
+  
   maze = new Labyrinth(73, 40); // crea el objeto de Laberinto asigandole un tamaño a cada cuadro del laberinto, el tamaño es variable, se puede cambiar a gusto
 
   character = new MainCharacter(0, 0, 5, maze);
@@ -20,6 +28,7 @@ public void setup() {
 // ---------- Zona del draw ------------ //
 public void draw() {
   background(#171717); // color gris oscuro
+  player.play();
   maze.moving(0, 0, 0, 0); // genera la forma del laberinto
   maze.display(); // invoco el display del laberinto
   character.display();
