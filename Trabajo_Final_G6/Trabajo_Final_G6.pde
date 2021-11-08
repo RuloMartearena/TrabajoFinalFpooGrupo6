@@ -9,11 +9,12 @@ private Family family;
 private Enemy enemy;
 private Labyrinth maze; 
 private Menus menus;
-int mode = 2;
+private int mode;
 
 // ---------- Configuración inicial -------------- //
 public void setup() {
   size(1200, 700);
+  mode = 0;
   minim = new Minim(this);
   menus = new Menus();
   player = minim.loadFile("resources/music/lofibits.mp3");
@@ -27,6 +28,7 @@ public void setup() {
 // ---------- Invocación de metodos ------------ //
 public void draw() {
   background(#171717); // color de fondo (gris oscuro)
+  player.play();
   switch(mode) { 
   case 0: // nombre del juego
     menus.displayName();
@@ -35,7 +37,6 @@ public void draw() {
     menus.displayControls();
     break;
   case 2:
-    player.play();
     maze.moving(0, 0, 0, 0); // genera la forma del laberinto
     maze.display();
     character.display();
@@ -55,6 +56,7 @@ public void draw() {
 }
 
 public void keyPressed() {
+  if (key == 'n') mode++;
   switch(keyCode) {
   case UP:
     character.move(0, -1);

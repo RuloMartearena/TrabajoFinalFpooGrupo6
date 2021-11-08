@@ -8,7 +8,7 @@ class Menus {
     textSize(60);
     text(Constants.GAME_NAME, width/3+10, height/2);
     textSize(15);
-    text(Constants.INSTRUCTION, width/2-80, height-40);
+    text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 
   /* Muestra las instrucciones */
@@ -17,7 +17,7 @@ class Menus {
     text(Constants.INSTRUCTION_ONE, width/3-38, height-370);
     text(Constants.INSTRUCTION_TWO, width/3+12, height-315);
     textSize(15);
-    text(Constants.INSTRUCTION, width/2-80, height-40);
+    text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 
   /* Muentra el mensaje cuando ganas */
@@ -25,7 +25,7 @@ class Menus {
     textSize(50);
     text(Constants.WIN, 230, height/2);
     textSize(15);
-    text(Constants.INSTRUCTION, width/2-80, height-40);
+    text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 
   /* Muentra el mensaje cuando moris */
@@ -33,6 +33,6 @@ class Menus {
     textSize(50);
     text(Constants.DIE, 465, height/2);
     textSize(15);
-    text(Constants.INSTRUCTION, width/2-80, height-40);
+    text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 }
