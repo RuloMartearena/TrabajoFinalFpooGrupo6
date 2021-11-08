@@ -3,13 +3,13 @@ import ddf.minim.*;
 Minim minim;
 AudioPlayer player;
 
-// ----------- Zona de variables globales ----------- //
+// ----------- Zona de variables ----------- //
 private MainCharacter character;
 private Family family;
 private Enemy enemy;
 private Labyrinth maze; 
 
-// ---------- Zona del setup -------------- //
+// ---------- Configuración inicial -------------- //
 public void setup() {
   size(1200, 700);
   minim = new Minim(this);
@@ -21,7 +21,7 @@ public void setup() {
   enemy.setPosition(new PVector (width/4, height-enemy.getHeightFrame()));
 }
 
-// ---------- Zona del draw ------------ //
+// ---------- Invocación de metodos ------------ //
 public void draw() {
   background(#171717); // color de fondo (gris oscuro)
   player.play();
