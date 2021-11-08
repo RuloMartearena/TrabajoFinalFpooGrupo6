@@ -9,7 +9,7 @@ private Family family;
 private Enemy enemy;
 private Labyrinth maze; 
 private Menus menus;
-private int mode;
+int mode;
 
 // ---------- Configuración inicial -------------- //
 public void setup() {
@@ -57,6 +57,9 @@ public void draw() {
 
 public void keyPressed() {
   if (key == 'n') mode++;
+  if (mode >= 5) {
+    mode = 2;
+  }
   switch(keyCode) {
   case UP:
     character.move(0, -1);
