@@ -27,7 +27,7 @@ class Enemy extends FrameObject {
     PImage frame = sprites.get(this.positionFrameX, this.positionFrameY, this.widthFrame, this.heightFrame);
     frame.resize(40, 40);
     imageMode(CENTER);
-    image(frame, this.positionX, this.positionY);
+    image(frame, this.position.x, this.position.y);
 
     if (this.positionFrameX < sprites.width-this.widthFrame) {
       positionFrameX+= this.widthFrame;
@@ -39,7 +39,7 @@ class Enemy extends FrameObject {
   /** Permite el movimiento del enemigo */
   public void move() {
     this.position.add(this.velocity);
-    if (position.y > (height-190)|| position.y < 190) {
+    if (position.y > (height-125)|| position.y < 8) {
       velocity.y = velocity.y * (-1);
     }
   }
