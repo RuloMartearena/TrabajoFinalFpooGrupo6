@@ -26,6 +26,8 @@ public void draw() {
   family.display();
   enemy.display(); //visualiza al enemigo
   enemy.move(); //muestra el movimiento del enemigo
+  frameRate(10);
+  delay(50);
 }
 
 void keyPressed() {
