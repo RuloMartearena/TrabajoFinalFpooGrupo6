@@ -5,7 +5,7 @@ class EnemyList {
   private EnemyList[] enemies;
 
   // ------------------ Zona de Constructores ------------------- //
-  
+
   public EnemyList () {
     enemies = new EnemyList[8];
   }

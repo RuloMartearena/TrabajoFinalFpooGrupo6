@@ -1,4 +1,4 @@
-
+// ------ variables especiales para la musica ------ //
 import ddf.minim.*;
 Minim minim;
 AudioPlayer player;
@@ -13,28 +13,24 @@ private Labyrinth maze;
 public void setup() {
   size(1200, 700);
   minim = new Minim(this);
-  player = minim.loadFile("lofibits.mp3");
-  
+  player = minim.loadFile("resources/music/lofibits.mp3");
   maze = new Labyrinth(73, 40); // crea el objeto de Laberinto asigandole un tamaño a cada cuadro del laberinto, el tamaño es variable, se puede cambiar a gusto
-
   character = new MainCharacter(0, 0, 5, maze);
-
   family = new Family ((int)random(maze.getWidthMaze()), (int)random(maze.getHeightMaze()), 5);
-
   enemy = new Enemy(new PVector(width/3, height/3));
   enemy.setPosition(new PVector (width/4, height-enemy.getHeightFrame()));
 }
 
 // ---------- Zona del draw ------------ //
 public void draw() {
-  background(#171717); // color gris oscuro
+  background(#171717); // color de fondo (gris oscuro)
   player.play();
   maze.moving(0, 0, 0, 0); // genera la forma del laberinto
-  maze.display(); // invoco el display del laberinto
+  maze.display();
   character.display();
   family.display();
-  enemy.display(); //visualiza al enemigo
-  enemy.move(); //muestra el movimiento del enemigo
+  enemy.display(); 
+  enemy.move(); 
   frameRate(10);
   delay(50);
 }
