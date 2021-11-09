@@ -10,7 +10,6 @@ class Menus {
     textSize(15);
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
-
   /* Muestra las instrucciones */
   public void displayControls() {
     textSize(20);
@@ -19,13 +18,6 @@ class Menus {
     textSize(15);
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
-
-  /* Muentra el mensaje cuando ganas */
-  public void displayWin() {
-    textSize(50);
-    text(Constants.WIN, 230, height/2);
-  }
-
   /* Muentra el mensaje cuando moris */
   public void displayDie() {
     textSize(50);
@@ -33,4 +25,13 @@ class Menus {
     textSize(15);
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
+
+  /* Muentra el mensaje cuando ganas 
+   public void displayWin() {
+   textSize(50);
+   text(Constants.WIN, 230, height/2);
+   case 4:
+   menus.displayWin();
+   break;
+   } */
 }
