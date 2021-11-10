@@ -32,25 +32,28 @@ class MainCharacter extends GameObject {
   public void display() {
     noStroke(); // saca los bordes a la forma
     fill(this.colorObject); // color del personaje (rosa)
-    circle(this.positionX*15+8, this.positionY*15+8, this.radius*2); // dibuja al personaje principal
+    circle(this.positionX*15+8, this.positionY*15+8, this.radius*2); // dibuja un circulo que representa al personaje principal
   }
+
   /* Desplaza al jugador de manera mas suave */
   public void displace() {
-    if (abs(this.positionX-nextPositionX)<this.velocity) this.positionX = nextPositionX; 
-    if (abs(this.positionY-nextPositionY)<this.velocity) this.positionY = nextPositionY;
+    if (abs(this.positionX-nextPositionX)<this.velocity) this.positionX = nextPositionX; // redondea los decimales para que no salte error al mover al jugador
+    if (abs(this.positionY-nextPositionY)<this.velocity) this.positionY = nextPositionY; // redondea los decimales para que no salte error al mover al jugador
     if (this.positionX < nextPositionX) {
-      this.positionX += this.velocity;
+      this.positionX += this.velocity; // a la posicion en X se le suma la velocidad
     } else if (this.positionX > nextPositionX) {
-      this.positionX -= this.velocity;
+      this.positionX -= this.velocity; // a la posicion en X se le resta la velocidad
     }
     if (this.positionY < nextPositionY) {
-      this.positionY += this.velocity;
+      this.positionY += this.velocity; // a la posicion en Y se le suma la velocidad
     } else if (this.positionY > nextPositionY) {
-      this.positionY -= this.velocity;
+      this.positionY -= this.velocity; // a la posicion en Y se le resta la velocidad
     }
   }  
+
   /** Mueve el personaje */
-  public void move(int moveX, int moveY) {    
+  public void move(int moveX, int moveY) {  // Los parametros usados es la cantidad que se desea mover  
+    // variables que representan a la nueva posicion (se usa para que el personaje se mueva)
     int newX = this.nextPositionX + moveX;
     int newY = this.nextPositionY + moveY;    
     // -- Compruebo limites del mapa -- //
@@ -69,8 +72,9 @@ class MainCharacter extends GameObject {
       }
     }
   }
+
   // -------------------- Zona de metodos --------------- //
-  // Siguiente posicion
+  // Siguiente posicion en X
   /* Cambia el valor de la siguiente posicion del objeto */
   public void setNextPositionX (int nextPositionX) {
     this.nextPositionX = nextPositionX; // Establece el valor del objeto
@@ -79,6 +83,7 @@ class MainCharacter extends GameObject {
   public int getNextPositionX() {
     return this.nextPositionX;
   }
+  // Siguiente posicion en Y
   /* Cambia el valor de la siguiente posicion del objeto */
   public void setNextPositionY (int nextPositionY) {
     this.nextPositionY = nextPositionY; // Establece el valor del objeto

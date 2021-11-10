@@ -25,7 +25,7 @@ abstract class GameObject {
 
   // -------------- Zona de metodos ------------------- //
 
-  // Posicion
+  // Posicion en X
   /* Cambia el valor de la posicion de los objetos */
   public void setPositionX (float positionX) {
     this.positionX = positionX; // Establece el valor de los objetos
@@ -34,6 +34,7 @@ abstract class GameObject {
   public float getPositionX() {
     return this.positionX;
   } 
+  // Posicion en Y
   /* Cambia el valor de la posicion de los objetos */
   public void setPositionY (float positionY) {
     this.positionY = positionY; // Establece el valor de los objetos

@@ -3,14 +3,14 @@ class Vector {
 
   // ------- Zona de atributos ------- //
 
-  /* Representa la posicion en X */
+  /* Representa la posicion en X del vector */
   private int posX;
-  /* Representa la posicion en Y */
+  /* Representa la posicion en Y del vector */
   private int posY;
 
   // ------- Zona de constructores ------- //
 
-  /* Constructor por defecto */
+  /* Constructor parametrizado */
   public Vector(int posX, int posY) {
     this.posX = posX;
     this.posY = posY;
@@ -20,12 +20,14 @@ class Vector {
 
   // ------- Zona de metodos ------- //
 
+  // Posicion en X
   public void setPosX(int posX) {
     this.posX = posX;
   }
   public int getPosX() {
     return this.posX;
   }
+  // Posicion en Y
   public void setPosY(int posY) {
     this.posY = posY;
   }

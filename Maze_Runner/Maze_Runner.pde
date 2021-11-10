@@ -27,7 +27,7 @@ public void setup() {
 // ---------- Invocación de metodos ------------ //
 public void draw() {
   background(#171717); // color de fondo (gris oscuro)
-  //player.play(); // musica
+  player.play(); // musica
   // ---- movimiento del jugador ---- //
   character.displace();
   if (character.positionX == character.nextPositionX && character.positionY == character.nextPositionY) {
@@ -52,7 +52,7 @@ public void draw() {
       }
     }
   }
-  // Estructura iterativa para menus
+  // --- Estructura iterativa para menus --- // 
   switch(mode) { 
   case 0: // nombre del juego
     menus.displayName();
@@ -70,7 +70,8 @@ public void draw() {
     maze.resetLabyrinth(); // resetea el laberinto
     maze.moving(0, 0, 0, 0); // genera otro laberinto
     // reposiciona al jugador
-    //character.setPosition(new PVector (0, 0));
+    character.setPositionX(0);
+    character.setPositionY(0);
     character.setNextPositionX(0);
     character.setNextPositionY(0);
     break;
@@ -79,8 +80,8 @@ public void draw() {
 
 // ------- keyPressed para menus ------ //
 public void keyPressed() {
-  if (key == 'n') mode++;
-  if (mode >= 4) {
+  if (key == 'n') mode++; // Aumenta la variable para los menus en 1 cuando se presiona la tecla n
+  if (mode >= 4) { // Si la variable del menu es mayor a 4 su valor es 2, esto es para que se genere otro laberinto
     mode = 2;
   }
 }
