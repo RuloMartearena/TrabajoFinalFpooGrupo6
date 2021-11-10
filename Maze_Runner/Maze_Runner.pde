@@ -41,13 +41,18 @@ public void draw() {
     maze.display();
     character.display();
     break;
+  case 3:
+    menus.displayWin();
+    maze.resetLabyrinth(); // resetea el laberinto
+    maze.moving(0, 0, 0, 0); // genera otro laberinto
+    break;
   }
 }
 
 // ------- keyPressed para movimiento del jugador y menus ------ //
 public void keyPressed() {
   if (key == 'n') mode++;
-  if (mode >= 3) {
+  if (mode >= 4) {
     mode = 2;
   }
   switch(keyCode) {

@@ -8,7 +8,7 @@ class Menus {
     textSize(60);
     text(Constants.GAME_NAME, width/3+10, height/2);
     textSize(15);
-    text(Constants.INSTRUCTION, width/2-80, height-40);
+    text(Constants.INSTRUCTION, width/2-90, height-40);
   }
   /* Muestra las instrucciones */
   public void displayControls() {
@@ -19,12 +19,11 @@ class Menus {
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 
-  /* Muentra el mensaje cuando ganas 
-   public void displayWin() {
-   textSize(50);
-   text(Constants.WIN, 230, height/2);
-   case 4:
-   menus.displayWin();
-   break;
-   } */
+  /* Muentra el mensaje cuando ganas */
+  public void displayWin() {
+    textSize(50);
+    text(Constants.WIN, 230, height/2);
+    textSize(15);
+    text(Constants.INSTRUCTION_WIN, width/2-90, height-40);
+  }
 }
