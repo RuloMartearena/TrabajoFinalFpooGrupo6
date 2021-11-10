@@ -18,14 +18,20 @@ class Labyrinth {
   public Labyrinth(int widthMaze, int heightMaze) {
     this.widthMaze = widthMaze;
     this.heightMaze = heightMaze;
-    this.colorMaze = 255;
+    this.colorMaze = 255; // (blanco)
     /* Array de celdas */
     celdas = new Cell[widthMaze][heightMaze];
-    resetLabyrinth();
+    resetLabyrinth(); // Dibuja otro patron para el laberinto que es lo mismo a dibujar un laberinto diferente
+    for (int i = 0; i<widthMaze; i++) {
+      for (int j = 0; j<heightMaze; j++) {
+        celdas[i][j] = new Cell();
+      }
+    }
   }
 
   // ------- Zona de operaciones ------- //
 
+  /* Dibuja un nuevo laberinto */
   public void resetLabyrinth() {
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
@@ -36,7 +42,7 @@ class Labyrinth {
 
   /* Genera el laberinto con un AutoWalker*/
   boolean moving(int x, int y, int prevX, int prevY) { // Los parametros son la posicion inicial y la posicion anterior
-    if (x<0 || x>=this.widthMaze || y<0 || y>=this.heightMaze || celdas[x][y].visited==true) { // o si la celda ya fue visitada
+    if (x<0 || x>=this.widthMaze || y<0 || y>=this.heightMaze || celdas[x][y].visited==true) { // si la celda ya fue visitada
       // No puede moverse
       return false;
     } else {
@@ -55,7 +61,6 @@ class Labyrinth {
       if (y > prevY) { 
         celdas[x][y].upWall=false;
       }
-
       /* El AutoWalker elige una dirreccion aleatoria */
       // Array de 4 direcciones (Vectores)
       Vector[] dirs = new Vector[4]; // Se crea aqui la variable por que sino el laberinto crea espacios inaccesibles
@@ -63,7 +68,6 @@ class Labyrinth {
       dirs[1] = new Vector(1, 0); // Derecha
       dirs[2] = new Vector(0, 1); // Abajo
       dirs[3] = new Vector(-1, 0); // Izquierda
-
       // Desordenar las direcciones aleatoriamente
       for (int mezcla = 0; mezcla<10; mezcla++) {
         // intercambio una direccion random con la siguiente
@@ -91,34 +95,45 @@ class Labyrinth {
 
   /* Dibuja el laberinto */
   public void display() {
-    stroke(this.colorMaze); // Color del laberinto (blanco)
-    strokeWeight(3); // ancho de las lineas (no modificable)
     translate(50, 50); // deja un espacio entre los bordes del laberinto (modificable)
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
+        stroke(this.colorMaze); // Color del laberinto (blanco)
+        strokeWeight(3); // ancho de las lineas (no modificable)
         pushMatrix();
         translate(i*15, j*15); // mueve la coordenada en 15 pixeles en el eje X e Y
         celdas[i][j].display();
         popMatrix(); // desace el translate
       }
     }
-    /* Lineas de relleno del laberinto */
+    /* Lineas de relleno del laberinto - Lineas de abajo e izquierda del margen */
+    stroke(this.colorMaze); // Color del laberinto (blanco)
+    strokeWeight(3); // ancho de las lineas (no modificable / tiene que ser el mismo que el de arriba)
     line(0, 0, 0, 15*this.heightMaze);
     line(0, 15*this.heightMaze, 15*this.widthMaze, 15*this.heightMaze);
   }
 
   // ------- Zona de metodos ------- //
 
+  // Ancho del laberinto
   public void setWidthMaze(int widthMaze) {
     this.widthMaze = widthMaze;
   }
   public int getWidthMaze() {
     return this.widthMaze;
   }
+  // Alto del laberinto
   public void setHeightMaze(int heightMaze) {
     this.heightMaze = heightMaze;
   }
   public int getHeightMaze() {
     return this.heightMaze;
+  }
+  // Color del laberinto
+  public void setColorMaze(color colorMaze) {
+    this.colorMaze = colorMaze;
+  }
+  public color getColorMaze() {
+    return this.colorMaze;
   }
 }
