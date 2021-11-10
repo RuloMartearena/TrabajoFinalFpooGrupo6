@@ -9,6 +9,9 @@ class Cell {
   private boolean rightWall;
   /* Representa si el muro ya fue visitado */
   private boolean visited;
+  
+  private color colorCell;
+  
 
   // ------- Zona de constructores ------- //
 
@@ -17,12 +20,14 @@ class Cell {
     this.upWall = true;
     this.rightWall = true;
     this.visited = false;
+    this.colorCell = #AFADAD;
   }
 
   // ------- Zona de operaciones ------- //
 
   /* Dibuja celdas */
   public void display() {
+    stroke(colorCell);
     if (upWall) {
       line(0, 0, 15, 0); // dibuja lineas
     }

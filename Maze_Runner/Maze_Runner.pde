@@ -21,12 +21,12 @@ public void setup() {
   // -- Laberinto -- //
   maze = new Labyrinth(73, 40); // crea el objeto de Laberinto asigandole un tamaño a cada cuadro del laberinto, el tamaño es variable, se puede cambiar a gusto
   // -- Personaje -- //
-  character = new MainCharacter(0, 0, 5, maze);
+  character = new MainCharacter(0, 0, 5, 0, maze);
 }
 
 // ---------- Invocación de metodos ------------ //
 public void draw() {
-  background(#171717); // color de fondo (gris oscuro)
+  background(#2C2B2B); // color de fondo (gris oscuro)
   //player.play(); // musica
   // Estructura iterativa para menus
   switch(mode) { 

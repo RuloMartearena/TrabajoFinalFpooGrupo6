@@ -1,12 +1,23 @@
 /* Clase menu que mostrará las distintas pantallas con mensajes en el juego */
 class Menus {
+  PFont fuente;
+  PImage fondo;
 
   // ---------- Zona de operaciones ------------ //
-
+  public Menus(){
+    this.fuente = loadFont("Verdana-BoldItalic-48.vlw");
+    this.fondo = loadImage("fondo.png");
+    textFont(this.fuente);
+  }
+  
+  
   /* Muestra el nombre del juego */
   public void displayName() {
-    textSize(60);
-    text(Constants.GAME_NAME, width/3+10, height/2);
+    fill(#902A2A);
+    image(fondo,0,0,width,height);
+    textSize(90);
+    text(Constants.GAME_NAME, 220, height/2);
+    fill(255);
     textSize(15);
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
