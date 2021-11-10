@@ -14,16 +14,24 @@ class Menus {
   public void displayControls() {
     textSize(20);
     text(Constants.INSTRUCTION_ONE, width/3-38, height-370);
-    text(Constants.INSTRUCTION_TWO, width/3+20, height-315);
+    text(Constants.INSTRUCTION_TWO, width/3+12, height-315);
+    textSize(15);
+    text(Constants.INSTRUCTION, width/2-90, height-40);
+  }
+  /* Muentra el mensaje cuando moris */
+  public void displayDie() {
+    textSize(50);
+    text(Constants.DIE, 465, height/2);
     textSize(15);
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 
-  /* Muentra el mensaje cuando ganas */
-  public void displayWin() {
-    textSize(50);
-    text(Constants.WIN, 230, height/2);
-    textSize(15);
-    text(Constants.INSTRUCTION_WIN, width/2-90, height-40);
-  }
+  /* Muentra el mensaje cuando ganas 
+   public void displayWin() {
+   textSize(50);
+   text(Constants.WIN, 230, height/2);
+   case 4:
+   menus.displayWin();
+   break;
+   } */
 }
