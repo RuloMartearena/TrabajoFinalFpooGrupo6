@@ -1,4 +1,4 @@
-/** Crea una clase abstracta de nombre GameObject */
+/* Crea una clase abstracta de nombre GameObject */
 abstract class GameObject {
 
   // ---------------- Zona de atributos ------------------- //
@@ -14,13 +14,13 @@ abstract class GameObject {
 
   // ----------------- Zona de constructores ---------------- //
 
-  /** Constructor en blanco */
+  /* Constructor en blanco */
   public GameObject() {
   }
 
   // ---------------- Zona de operaciones -------------------- //
 
-  /** Metodo abstracto display */
+  /* Metodo abstracto display */
   abstract public void display();
 
   // -------------- Zona de metodos ------------------- //
@@ -44,20 +44,20 @@ abstract class GameObject {
     return this.positionY;
   } 
   // Color
-  /** Cambia el valor del atributo colorObject */
+  /* Cambia el valor del atributo colorObject */
   public void setColorObject(color colorObject) {
     this.colorObject = colorObject; // Establece el valor del atributo
   }
-  /** Retorna el valor del atributo colorObject */
+  /* Retorna el valor del atributo colorObject */
   public color getColorObject() {
     return this.colorObject;
   }
   // Radio
-  /** Cambia el valor del atributo radio */
+  /* Cambia el valor del atributo radio */
   public void setRadius(int radius) {
     this.radius = radius; // Establece el valor del atributo
   }
-  /** Retorna el valor del atributo radio */
+  /* Retorna el valor del atributo radio */
   public int getRadius() {
     return this.radius;
   }

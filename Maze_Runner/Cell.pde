@@ -34,15 +34,14 @@ class Cell {
     this.posXBall = 8;
     this.posYBall = 8;
     this.radiusBall = 3;
-    this.colorCell = #AFADAD;
-
+    this.colorCell = (#AFADAD); // (gris)
   }
 
   // ------- Zona de operaciones ------- //
 
   /* Dibuja celdas */
   public void display() {
-    stroke(colorCell);
+    stroke(colorCell); // Aplica color a las celdas
     if (upWall) {
       line(0, 0, 15, 0); // dibuja lineas
     }
@@ -113,5 +112,12 @@ class Cell {
   }
   public int getRadiusBall() {
     return this.radiusBall;
+  }
+  // Color de las celdas
+  public void setColorCell(color colorCell) {
+    this.colorCell=colorCell;
+  }
+  public color getColorCell() {
+    return this.colorCell;
   }
 }

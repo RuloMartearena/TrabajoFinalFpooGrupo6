@@ -1,4 +1,4 @@
-/** Crea una clase llamada MainCharacter que hereda de la clase GameObject */
+/* Crea una clase llamada MainCharacter que hereda de la clase GameObject */
 class MainCharacter extends GameObject {
   
 
@@ -29,7 +29,7 @@ class MainCharacter extends GameObject {
 
   // -------------------- Zona de operaciones -------------- //
 
-  /** Dibuja un personaje */
+  /* Dibuja un personaje */
   public void display() {
     noStroke(); // saca los bordes a la forma
     fill(this.colorObject); // color del personaje (rosa)
@@ -52,7 +52,7 @@ class MainCharacter extends GameObject {
     }
   }  
 
-  /** Mueve el personaje */
+  /* Mueve el personaje */
   public void move(int moveX, int moveY) {  // Los parametros usados es la cantidad que se desea mover  
     // variables que representan a la nueva posicion (se usa para que el personaje se mueva)
     int newX = this.nextPositionX + moveX;
