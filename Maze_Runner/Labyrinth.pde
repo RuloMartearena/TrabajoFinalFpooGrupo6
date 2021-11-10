@@ -22,10 +22,16 @@ class Labyrinth {
     /* Array de celdas */
     celdas = new Cell[widthMaze][heightMaze];
     resetLabyrinth();
+    for (int i = 0; i<widthMaze; i++) {
+      for (int j = 0; j<heightMaze; j++) {
+        celdas[i][j] = new Cell();
+      }
+    }
   }
 
   // ------- Zona de operaciones ------- //
 
+  /* Dibuja un nuevo laberinto */
   public void resetLabyrinth() {
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
@@ -91,18 +97,20 @@ class Labyrinth {
 
   /* Dibuja el laberinto */
   public void display() {
-    stroke(this.colorMaze); // Color del laberinto (blanco)
-    strokeWeight(3); // ancho de las lineas (no modificable)
     translate(50, 50); // deja un espacio entre los bordes del laberinto (modificable)
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
+        stroke(this.colorMaze); // Color del laberinto (blanco)
+        strokeWeight(3); // ancho de las lineas (no modificable)
         pushMatrix();
         translate(i*15, j*15); // mueve la coordenada en 15 pixeles en el eje X e Y
         celdas[i][j].display();
         popMatrix(); // desace el translate
       }
     }
-    /* Lineas de relleno del laberinto */
+    /* Lineas de relleno del laberinto - Lineas de abajo e izquierda del margen */
+    stroke(this.colorMaze); // Color del laberinto (blanco)
+    strokeWeight(3); // ancho de las lineas (no modificable)
     line(0, 0, 0, 15*this.heightMaze);
     line(0, 15*this.heightMaze, 15*this.widthMaze, 15*this.heightMaze);
   }

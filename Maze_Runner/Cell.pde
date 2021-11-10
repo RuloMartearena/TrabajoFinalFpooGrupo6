@@ -9,6 +9,8 @@ class Cell {
   private boolean rightWall;
   /* Representa si el muro ya fue visitado */
   private boolean visited;
+  /**/
+  private boolean ball;
 
   // ------- Zona de constructores ------- //
 
@@ -17,6 +19,7 @@ class Cell {
     this.upWall = true;
     this.rightWall = true;
     this.visited = false;
+    this.ball = true;
   }
 
   // ------- Zona de operaciones ------- //
@@ -28,6 +31,11 @@ class Cell {
     }
     if (rightWall) {
       line(15, 0, 15, 15); // dibuja lineas
+    }
+    if (ball) {
+      noStroke();
+      fill(255, 233, 0);
+      ellipse(8, 8, 3, 3);
     }
   }
 

@@ -28,6 +28,30 @@ public void setup() {
 public void draw() {
   background(#171717); // color de fondo (gris oscuro)
   //player.play(); // musica
+  // ---- movimiento del jugador ---- //
+  character.displace();
+  if (character.positionX == character.nextPositionX && character.positionY == character.nextPositionY) {
+    if (maze.celdas[character.nextPositionX][character.nextPositionY].ball = true) {
+      // character.points++;
+      maze.celdas[character.nextPositionX][character.nextPositionY].ball = false;
+    }
+    if (keyPressed) {
+      switch(keyCode) {
+      case UP:
+        character.move(0, -1);
+        break;
+      case DOWN:
+        character.move(0, 1);
+        break;
+      case LEFT:
+        character.move(-1, 0);
+        break;
+      case RIGHT:
+        character.move(1, 0);
+        break;
+      }
+    }
+  }
   // Estructura iterativa para menus
   switch(mode) { 
   case 0: // nombre del juego
@@ -45,28 +69,18 @@ public void draw() {
     menus.displayWin();
     maze.resetLabyrinth(); // resetea el laberinto
     maze.moving(0, 0, 0, 0); // genera otro laberinto
+    // reposiciona al jugador
+    //character.setPosition(new PVector (0, 0));
+    character.setNextPositionX(0);
+    character.setNextPositionY(0);
     break;
   }
 }
 
-// ------- keyPressed para movimiento del jugador y menus ------ //
+// ------- keyPressed para menus ------ //
 public void keyPressed() {
   if (key == 'n') mode++;
   if (mode >= 4) {
     mode = 2;
-  }
-  switch(keyCode) {
-  case UP:
-    character.move(0, -1);
-    break;
-  case DOWN:
-    character.move(0, 1);
-    break;
-  case LEFT:
-    character.move(-1, 0);
-    break;
-  case RIGHT:
-    character.move(1, 0);
-    break;
   }
 }

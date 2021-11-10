@@ -3,13 +3,13 @@ abstract class GameObject {
 
   // ---------------- Zona de atributos ------------------- //
 
-  /** Representa la posicion en X de los objetos */
-  protected Integer positionX;
-  /** Representa la posicion en Y de los objetos */
-  protected Integer positionY;
-  /** Representa el color de los objetos */
+  /* Representa la posicion en x de los objetos */
+  protected float positionX; 
+  /* Representa la posicion en y de los objetos */
+  protected float positionY;
+  /* Representa el color de los objetos */
   protected color colorObject;
-  /** Representa el radio de los objetos */
+  /* Representa el radio de los objetos */
   protected Integer radius;
 
   // ----------------- Zona de constructores ---------------- //
@@ -25,22 +25,24 @@ abstract class GameObject {
 
   // -------------- Zona de metodos ------------------- //
 
-  /** Cambia el valor del atributo posicion */
-  public void setPositionX (int positionX) {
-    this.positionX = positionX; // Establece el valor del atributo
+  // Posicion
+  /* Cambia el valor de la posicion de los objetos */
+  public void setPositionX (float positionX) {
+    this.positionX = positionX; // Establece el valor de los objetos
   }
-  /** Retorna el valor del atributo posicion */
-  public Integer getPositionX() {
+  /* Retorna el valor de los objetos */
+  public float getPositionX() {
     return this.positionX;
+  } 
+  /* Cambia el valor de la posicion de los objetos */
+  public void setPositionY (float positionY) {
+    this.positionY = positionY; // Establece el valor de los objetos
   }
-  /** Cambia el valor del atributo posicion */
-  public void setPositionY (int positionY) {
-    this.positionY = positionY; // Establece el valor del atributo
-  }
-  /** Retorna el valor del atributo posicion */
-  public Integer getPositionY() {
+  /* Retorna el valor de los objetos */
+  public float getPositionY() {
     return this.positionY;
-  }
+  } 
+  // Color
   /** Cambia el valor del atributo colorObject */
   public void setColorObject(color colorObject) {
     this.colorObject = colorObject; // Establece el valor del atributo
@@ -49,6 +51,7 @@ abstract class GameObject {
   public color getColorObject() {
     return this.colorObject;
   }
+  // Radio
   /** Cambia el valor del atributo radio */
   public void setRadius(int radius) {
     this.radius = radius; // Establece el valor del atributo
