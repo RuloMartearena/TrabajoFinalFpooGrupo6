@@ -18,13 +18,6 @@ class Menus {
     textSize(15);
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
-  /* Muentra el mensaje cuando moris */
-  public void displayDie() {
-    textSize(50);
-    text(Constants.DIE, 465, height/2);
-    textSize(15);
-    text(Constants.INSTRUCTION, width/2-90, height-40);
-  }
 
   /* Muentra el mensaje cuando ganas 
    public void displayWin() {
