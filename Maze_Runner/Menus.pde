@@ -14,8 +14,8 @@ class Menus {
 
   /* Constructor parametrizado */
   public Menus() {
-    this.fuente = loadFont("Verdana-BoldItalic-48.vlw");
-    this.fondo = loadImage("fondo.png");
+    this.fuente = loadFont("resources/images/Verdana-BoldItalic-48.vlw");
+    this.fondo = loadImage("resources/images/fondo.png");
     textFont(this.fuente);
     this.fontColor = (#902A2A);
   }
