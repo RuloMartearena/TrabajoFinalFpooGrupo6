@@ -19,6 +19,8 @@ class Cell {
   private int posYBall;
   /* Representa el radio de las bolas en el laberinto */
   private int radiusBall;
+  /* Representa el color de las celdas del laberinto */
+  private color colorCell;
 
   // ------- Zona de constructores ------- //
 
@@ -32,12 +34,15 @@ class Cell {
     this.posXBall = 8;
     this.posYBall = 8;
     this.radiusBall = 3;
+    this.colorCell = #AFADAD;
+
   }
 
   // ------- Zona de operaciones ------- //
 
   /* Dibuja celdas */
   public void display() {
+    stroke(colorCell);
     if (upWall) {
       line(0, 0, 15, 0); // dibuja lineas
     }
