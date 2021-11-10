@@ -27,7 +27,8 @@ public void setup() {
 // ---------- Invocación de metodos ------------ //
 public void draw() {
   background(#171717); // color de fondo (gris oscuro)
-  //player.play();
+  //player.play(); // musica
+  // Estructura iterativa para menus
   switch(mode) { 
   case 0: // nombre del juego
     menus.displayName();
@@ -35,7 +36,7 @@ public void draw() {
   case 1: // controles y objetivo
     menus.displayControls();
     break;
-  case 2:
+  case 2: // juego en si
     maze.moving(0, 0, 0, 0); // genera la forma del laberinto
     maze.display();
     character.display();
@@ -43,6 +44,7 @@ public void draw() {
   }
 }
 
+// ------- keyPressed para movimiento del jugador y menus ------ //
 public void keyPressed() {
   if (key == 'n') mode++;
   if (mode >= 3) {
