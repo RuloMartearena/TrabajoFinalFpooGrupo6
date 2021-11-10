@@ -3,11 +3,8 @@ class MainCharacter extends GameObject {
 
   // ---------------- Zona de atributos ------------------- //
 
-  /** Representa si el objeto esta "vivo" */
-  private boolean life;
   /* Representa el mapa del laberinto que tiene el jugador */
   private Labyrinth maze;
-
 
   // ----------------- Zona de constructores ---------------- //
 
@@ -17,7 +14,6 @@ class MainCharacter extends GameObject {
     this.positionY = positionY;
     this.colorObject = #E047E3; // (rosa)
     this.radius = radius;
-    this.life = true;
     this.maze = maze;
   }
 
@@ -53,13 +49,4 @@ class MainCharacter extends GameObject {
   }
 
   // -------------------- Zona de metodos --------------- //
-
-  /** Cambia el valor del atributo life */
-  public void setLife(boolean life) {
-    this.life = life; // Establece el valor del atributo life
-  }
-  /** Retorna el valor del atributo life */
-  public boolean getLife() {
-    return this.life;
-  }
 }
