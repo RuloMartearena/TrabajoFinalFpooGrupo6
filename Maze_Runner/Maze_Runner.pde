@@ -21,7 +21,7 @@ public void setup() {
   // -- Laberinto -- //
   maze = new Labyrinth(73, 40); // crea el objeto de Laberinto asigandole un tamaño a cada cuadro del laberinto, el tamaño es variable, se puede cambiar a gusto
   // -- Personaje -- //
-  character = new MainCharacter(0, 0, 5, 0, maze);
+  character = new MainCharacter(0, 0, 5, maze);
 }
 
 // ---------- Invocación de metodos ------------ //
