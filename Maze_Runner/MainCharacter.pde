@@ -80,8 +80,7 @@ class MainCharacter extends GameObject {
   public void collectPoints() {
     textSize(15);
     fill(#AFADAD); // color de las letras 
-    text(Constants.POINTS_PLAYER, -1, -10);
-    text(this.points, 65, -10);
+    text(Constants.POINTS_PLAYER+this.points, -1, -10);
     maze.celdas[this.nextPositionX][this.nextPositionY].ball = false;
   }
 
