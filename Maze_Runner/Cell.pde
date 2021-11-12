@@ -30,7 +30,7 @@ class Cell {
     this.rightWall = true;
     this.visited = false;
     this.ball = true;
-    this.colorBall = (#FFE900); // (amarillo)
+    this.colorBall = (#008F46); // (verde oscuro)
     this.posXBall = 8;
     this.posYBall = 8;
     this.radiusBall = 3;
