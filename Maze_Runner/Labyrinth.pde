@@ -18,7 +18,7 @@ class Labyrinth {
   public Labyrinth(int widthMaze, int heightMaze) {
     this.widthMaze = widthMaze;
     this.heightMaze = heightMaze;
-    this.colorMaze = 255; // (blanco)
+    this.colorMaze = (#AFADAD); // (gris oscuro)
     /* Array de celdas */
     celdas = new Cell[widthMaze][heightMaze];
     resetLabyrinth(); // Dibuja otro patron para el laberinto que es lo mismo a dibujar un laberinto diferente
