@@ -1,7 +1,6 @@
 /* Crea una clase llamada MainCharacter que hereda de la clase GameObject */
 class MainCharacter extends GameObject {
 
-
   // ---------------- Zona de atributos ------------------- //
 
   /* Representa el mapa del laberinto que tiene el jugador */
@@ -75,6 +74,15 @@ class MainCharacter extends GameObject {
         this.nextPositionY = newY;
       }
     }
+  }
+
+  /* Cuenta y aumenta los puntos */
+  public void collectPoints() {
+    textSize(15);
+    fill(#AFADAD); // color de las letras 
+    text(Constants.POINTS_PLAYER, -1, -10);
+    text(this.points, 65, -10);
+    maze.celdas[this.nextPositionX][this.nextPositionY].ball = false;
   }
 
   // -------------------- Zona de metodos --------------- //
