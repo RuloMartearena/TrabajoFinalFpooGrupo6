@@ -42,8 +42,8 @@ class MainCharacter extends GameObject {
   public void collectPoints() {
     textSize(15);
     fill(#AFADAD); // color de las letras (gris oscuro | el mismo que el del laberinto y las celdas)
-    text(Constants.POINTS_PLAYER+this.points, -1, -10);
-    this.maze.celdas[this.nextPositionX][this.nextPositionY].ball = false;
+    text(Constants.POINTS_PLAYER+this.points, -1, -10); // mensaje
+    this.maze.celdas[this.nextPositionX][this.nextPositionY].ball = false; // elimina las pelotas por donde el personaje pase
   }
 
   /* Desplaza al jugador de manera mas suave */
