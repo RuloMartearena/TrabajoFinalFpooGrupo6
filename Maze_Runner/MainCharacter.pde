@@ -1,6 +1,6 @@
 /* Crea una clase llamada MainCharacter que hereda de la clase GameObject */
 class MainCharacter extends GameObject {
-  
+
 
   // ---------------- Zona de atributos ------------------- //
 
@@ -12,6 +12,8 @@ class MainCharacter extends GameObject {
   private int nextPositionY;
   /* Representa la velocidad a la que se mueve el jugador */
   private float velocity;
+  /* Representa los puntos del jugador */
+  private int points;
 
   // ----------------- Zona de constructores ---------------- //
 
@@ -25,6 +27,7 @@ class MainCharacter extends GameObject {
     this.velocity = 0.3;
     this.colorObject = #E047E3; // (rosa)
     this.radius = radius;
+    this.points = 0;
   }
 
   // -------------------- Zona de operaciones -------------- //
