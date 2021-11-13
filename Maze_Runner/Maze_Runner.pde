@@ -8,6 +8,8 @@ private MainCharacter character;
 private Labyrinth maze; 
 private Menus menus;
 private int mode; // Variable del sketch para los menus
+private Cat cat;
+private Enemy enemy;
 
 // ---------- Configuración inicial -------------- //
 public void setup() {
@@ -22,6 +24,12 @@ public void setup() {
   maze = new Labyrinth(73, 40); 
   // -- Personaje -- //
   character = new MainCharacter(0, 0, 5, maze);
+  // -- Gato -- //
+  cat = new Cat(new PVector(0, 0));
+  cat.setPosition(new PVector (20, 20));
+  // -- Enemigo -- //
+  enemy = new Enemy(new PVector(0, 0));
+  enemy.setPosition(new PVector (200, 50));
 }
 
 // ---------- Invocación de metodos ------------ //
@@ -42,6 +50,10 @@ public void draw() {
     character.collectPoints(); 
     character.displace(); // movimiento del juegador
     character.display(); // dibujo del jugador
+    cat.display();
+    cat.move();
+    enemy.display();
+    enemy.move();
     break;
   case 3:
     menus.displayWin(); // mensaje de que se gano el juego
