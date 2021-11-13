@@ -9,7 +9,11 @@ private Labyrinth maze;
 private Menus menus;
 private int mode; // Variable del sketch para los menus
 private Cat cat;
+
 private Enemy[]enemies = new Enemy [6];
+private Enemy enemy;
+private FamilyList familylist;
+
 
 // ---------- Configuración inicial -------------- //
 public void setup() {
@@ -32,6 +36,11 @@ public void setup() {
   for (int i=0; i < enemies.length; i++) {
     enemies [i] = new Enemy(new PVector(width/2, i*(height-20)/enemies.length), new PVector(random(1, 15), 0));
   }
+  // -- Familiares --//
+  familylist = new FamilyList();
+  for(int i=0;i<familylist.kin.length;i++){
+      familylist.kin[i] = new Family((int)random(73),(int)random(40),5);
+    }
 }
 
 // ---------- Invocación de metodos ------------ //
@@ -54,10 +63,18 @@ public void draw() {
     character.display(); // dibujo del jugador
     cat.display();
     cat.move();
+
     for (int i=0; i< enemies.length; i++) {
       enemies[i].display();
       enemies[i].move();
     }
+    familylist.kin[0].display();
+    familylist.kin[0].colision(character); 
+    familylist.kin[1].display();
+    familylist.kin[1].colision(character);
+    familylist.kin[2].display();
+    familylist.kin[2].colision(character); 
+
     break;
   case 3:
     menus.displayWin(); // mensaje de que se gano el juego
