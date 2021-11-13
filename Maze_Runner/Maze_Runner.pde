@@ -8,10 +8,9 @@ private MainCharacter character;
 private Labyrinth maze; 
 private Menus menus;
 private int mode; // Variable del sketch para los menus
-
-
 private Cat cat;
 private Enemy enemy;
+
 // ---------- Configuración inicial -------------- //
 public void setup() {
   size(1200, 700);
@@ -25,29 +24,18 @@ public void setup() {
   maze = new Labyrinth(73, 40); 
   // -- Personaje -- //
   character = new MainCharacter(0, 0, 5, maze);
-  
-  
-  cat = new Cat(new PVector(0,0));
-  cat.setPosition(new PVector (20,20));
-  enemy = new Enemy(new PVector(0,0));
-  enemy.setPosition(new PVector (200,50));
-  
-  
+  // -- Gato -- //
+  cat = new Cat(new PVector(0, 0));
+  cat.setPosition(new PVector (20, 20));
+  // -- Enemigo -- //
+  enemy = new Enemy(new PVector(0, 0));
+  enemy.setPosition(new PVector (200, 50));
 }
 
 // ---------- Invocación de metodos ------------ //
 public void draw() {
   background(#2C2B2B); // color de fondo (gris oscuro)
-  
-  cat.display();
-  cat.move();
-  
-  enemy.display();
-  enemy.move();
-  
-  
-  
-  player.play(); // musica
+  //player.play(); // musica
   // ---- movimiento del jugador ---- //
   character.displace();
   if (character.positionX == character.nextPositionX && character.positionY == character.nextPositionY) {
@@ -84,6 +72,10 @@ public void draw() {
     maze.moving(0, 0, 0, 0); // genera la forma del laberinto
     maze.display();
     character.display();
+    cat.display();
+    cat.move();
+    enemy.display();
+    enemy.move();
     break;
   case 3:
     menus.displayWin();

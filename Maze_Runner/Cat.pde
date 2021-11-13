@@ -18,15 +18,14 @@ class Cat extends FrameObject {
     this.positionX = 0;
     this.positionY = 20;
     this.velocity = new PVector (0, 0);
-
   }
 
   //-------------------Zona de Operaciones--------------//
 
   /** Permite mostrar al gato en el lienzo*/
   public void display() {
-    frameRate(5);
-    delay(0);
+    //frameRate(5);
+    //delay(0);
     PImage frame = sprites.get(this.positionFrameX, this.positionFrameY, this.widthFrame, this.heightFrame);
     frame.resize(50, 50);
     imageMode(CENTER);
@@ -36,51 +35,46 @@ class Cat extends FrameObject {
     } else {
       positionFrameX=0;
     }
-    
-    println(position.x);
   }
 
   public void move() {
     this.position.add(this.velocity);
 
-    if (position.x<width-35){
-    if (position.y<=20){
-      positionFrameY=160;
-      positionFrameX+= this.widthFrame;
-      velocity.y=0;
-      velocity.x=1;
-      velocity.x = velocity.x*10;
-    }
-    }
-     else {
-
+    if (position.x<width-35) {
+      if (position.y<=20) {
+        positionFrameY=160;
+        positionFrameX+= this.widthFrame;
+        velocity.y=0;
+        velocity.x=1;
+        velocity.x = velocity.x*10;
+      }
+    } else {
       positionFrameY=0;
       positionFrameX+= this.widthFrame;
       velocity.x = 0;
       velocity.y=1;
       velocity.y = velocity.y*10;
-    
     }
-    if (position.y> height-35) {
-      if (position.x>20){
-      positionFrameY=480;
-      positionFrameX+= this.widthFrame;
-      velocity.y = 0;
-      velocity.x=1;
-      velocity.x = velocity.x*(-10);
-    }
-    }
-    if(position.x<30) {
-   if (position.y>30){
-      positionFrameY=320;
-      positionFrameX+= this.widthFrame;
-      velocity.y = 1;
-      velocity.x=0;
-      velocity.y = velocity.y*(-10);
-   }
-    } 
-    
 
+    if (position.y> height-35) {
+      if (position.x>20) {
+        positionFrameY=480;
+        positionFrameX+= this.widthFrame;
+        velocity.y = 0;
+        velocity.x=1;
+        velocity.x = velocity.x*(-10);
+      }
+    }
+
+    if (position.x<30) {
+      if (position.y>30) {
+        positionFrameY=320;
+        positionFrameX+= this.widthFrame;
+        velocity.y = 1;
+        velocity.x=0;
+        velocity.y = velocity.y*(-10);
+      }
+    }
   }
   //------------zona de métodos--------------((
 

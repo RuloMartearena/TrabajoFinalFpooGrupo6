@@ -5,11 +5,11 @@ class Enemy extends FrameObject {
 
   /**Representa la velocidad de Cat */
   private PVector velocity;
-
   private int direction;
   private int contframes;
   private int cantFrames;
   private boolean avance;
+
   //--------------------Zona de constructores---------------//
 
   public Enemy(PVector position) {
@@ -24,36 +24,32 @@ class Enemy extends FrameObject {
   }
 
   //-------------------Zona de Operaciones--------------//
+
   public void display() {
-    frameRate(5);
-    delay(20);
+    //frameRate(5);
+    //delay(20);
     PImage frame = sprites.get(this.positionFrameX, this.positionFrameY, this.widthFrame, this.heightFrame);
     frame.resize(50, 50);
-    //imageMode(CENTER);
+    imageMode(CENTER);
     image(frame, this.position.x, this.position.y);
-    if (positionFrameX<(sprites.width-widthFrame)) {//(sprites.width+this.widthFrame)) {
+    if (positionFrameX<(sprites.width-widthFrame)) {//(sprites.width+this.widthFrame))
       positionFrameX+= this.widthFrame;
     } else {
       positionFrameX= 0;
     }
   }
+
   public void move() {
-
     this.position.add(this.velocity);
-
     if ((position.y >1200)||(position.y<350)) {
       velocity.y = velocity.y+1;
-
-
       positionFrameY = 0;
     } else {
-
       positionFrameY = 600;
       velocity.y = velocity.y-1;
-      println(position.y);
     }
-   
   }
+
   //------------zona de métodos--------------((
 
   /**Cambia el valor del atributo velocity*/

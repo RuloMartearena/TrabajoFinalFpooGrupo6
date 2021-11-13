@@ -1,6 +1,6 @@
 /* Crea una clase llamada MainCharacter que hereda de la clase GameObject */
 class MainCharacter extends GameObject {
-  
+
 
   // ---------------- Zona de atributos ------------------- //
 
