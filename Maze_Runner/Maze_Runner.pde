@@ -10,6 +10,7 @@ private Menus menus;
 private int mode; // Variable del sketch para los menus
 private Cat cat;
 private Enemy enemy;
+private FamilyList familylist;
 
 // ---------- Configuración inicial -------------- //
 public void setup() {
@@ -30,6 +31,11 @@ public void setup() {
   // -- Enemigo -- //
   enemy = new Enemy(new PVector(0, 0));
   enemy.setPosition(new PVector (200, 50));
+  // -- Familiares --//
+  familylist = new FamilyList();
+  for(int i=0;i<familylist.kin.length;i++){
+      familylist.kin[i] = new Family((int)random(73),(int)random(40),5);
+    }
 }
 
 // ---------- Invocación de metodos ------------ //
@@ -54,6 +60,12 @@ public void draw() {
     cat.move();
     enemy.display();
     enemy.move();
+    familylist.kin[0].display();
+    familylist.kin[0].colision(character); 
+    familylist.kin[1].display();
+    familylist.kin[1].colision(character);
+    familylist.kin[2].display();
+    familylist.kin[2].colision(character); 
     break;
   case 3:
     menus.displayWin(); // mensaje de que se gano el juego
