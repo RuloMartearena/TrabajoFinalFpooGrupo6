@@ -4,20 +4,18 @@ Minim minim;
 AudioPlayer player;
 
 // ----------- Zona de variables ----------- //
-private MainCharacter character;
-private Labyrinth maze; 
-private Menus menus;
+private MainCharacter character; // Jugador
+private Labyrinth maze; // Laberinto
+private Menus menus; // Menus
+private Cat cat; // Gato
+private Enemy[]enemies = new Enemy [6]; // Enemigos
+private Enemy enemy; // Enemigo
+private FamilyList familylist; // Familiares
 private int mode; // Variable del sketch para los menus
-private Cat cat;
-
-private Enemy[]enemies = new Enemy [6];
-private Enemy enemy;
-private FamilyList familylist;
-
 
 // ---------- Configuración inicial -------------- //
 public void setup() {
-  size(1200, 700);
+  size(1200, 700); 
   // -- Menus -- //
   mode = 0;
   menus = new Menus();
@@ -32,15 +30,14 @@ public void setup() {
   cat = new Cat(new PVector(0, 0));
   cat.setPosition(new PVector (-20, -30));
   // -- Enemigo -- //
-
   for (int i=0; i < enemies.length; i++) {
     enemies [i] = new Enemy(new PVector(width/2, i*(height-20)/enemies.length), new PVector(random(1, 15), 0));
   }
   // -- Familiares --//
   familylist = new FamilyList();
-  for(int i=0;i<familylist.kin.length;i++){
-      familylist.kin[i] = new Family((int)random(73),(int)random(40),5);
-    }
+  for (int i=0; i<familylist.kin.length; i++) {
+    familylist.kin[i] = new Family((int)random(73), (int)random(40), 5);
+  }
 }
 
 // ---------- Invocación de metodos ------------ //
@@ -63,7 +60,6 @@ public void draw() {
     character.display(); // dibujo del jugador
     cat.display();
     cat.move();
-
     for (int i=0; i< enemies.length; i++) {
       enemies[i].display();
       enemies[i].move();
@@ -74,7 +70,6 @@ public void draw() {
     familylist.kin[1].colision(character);
     familylist.kin[2].display();
     familylist.kin[2].colision(character); 
-
     break;
   case 3:
     menus.displayWin(); // mensaje de que se gano el juego
@@ -88,12 +83,6 @@ public void draw() {
     break;
   }
 }
-
-
-
-
-
-
 
 // ------- keyPressed para menus ------ //
 public void keyPressed() {

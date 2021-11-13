@@ -1,13 +1,14 @@
-/** Crea una clase de nombre Cat */
+/* Representa al gato que camina por el laberinto */
 class Cat extends FrameObject {
 
   //-------------------------Zona de atributos---------------//
 
-  /**Representa la velocidad de Cat */
+  /* Representa la velocidad del gato */
   private PVector velocity;
 
   //--------------------Zona de constructores---------------//
 
+  /* Constructor parametrizado y por defecto */
   public Cat(PVector position) {
     this.sprites = requestImage("resources/images/Cat.png");
     this.position = position;
@@ -17,29 +18,27 @@ class Cat extends FrameObject {
     this.positionFrameY = 160;
     this.positionX = 0;
     this.positionY = 20;
-    this.velocity = new PVector (0, 0);
+    this.velocity = new PVector(0, 0);
   }
 
   //-------------------Zona de Operaciones--------------//
 
-  /** Permite mostrar al gato en el lienzo*/
+  /* Dibuja al gato */
   public void display() {
-    //frameRate(5);
-    //delay(0);
     PImage frame = sprites.get(this.positionFrameX, this.positionFrameY, this.widthFrame, this.heightFrame);
     frame.resize(50, 50);
     imageMode(CENTER);
     image(frame, this.position.x, this.position.y);
-    if (positionFrameX<(sprites.width-widthFrame)) {//(sprites.width+this.widthFrame)) {
+    if (positionFrameX<(sprites.width-widthFrame)) { // (sprites.width+this.widthFrame)
       positionFrameX+= this.widthFrame;
     } else {
       positionFrameX=0;
     }
   }
 
+  /* Permite que el gato se mueva */
   public void move() {
-    this.position.add(this.velocity);
-
+    this.position.add(this.velocity); // Metodo add para agregar velocidad
     if (position.x<=width-80) {
       if (position.y<=-30) {
         positionFrameY=160;
@@ -55,7 +54,6 @@ class Cat extends FrameObject {
       velocity.y=1;
       velocity.y = velocity.y*3;
     }
-
     if (position.y> height-90) {
       if (position.x>20) {
         positionFrameY=480;
@@ -65,8 +63,6 @@ class Cat extends FrameObject {
         velocity.x = velocity.x*(-3);
       }
     }
-  
-
     if (position.x<-20) {
       if (position.y>-10) {
         positionFrameY=320;
@@ -79,11 +75,10 @@ class Cat extends FrameObject {
   }
   //------------zona de métodos--------------((
 
-  /**Cambia el valor del atributo velocity*/
+  // Velocidad
   public void setVelocity(PVector velocity) {
     this.velocity = velocity;
   }
-  /*Se retorna el valor del atributo velocity*/
   public PVector getVelocity() {
     return this.velocity;
   }

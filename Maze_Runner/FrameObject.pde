@@ -1,3 +1,4 @@
+/* Clase que representa la base para los sprites */
 class FrameObject {
 
   // ------------------ Zona de atributos ----------------- //
@@ -27,7 +28,7 @@ class FrameObject {
 
   // ------------------ Zona de operaciones ----------------- //
 
-  /* Permite que se dibuje el sprite */
+  /* Dibuja el sprite */
   public void display() {
     imageMode(CENTER);
     image(this.sprites, this.positionX, this.positionY, this.widthFrame, this.heightFrame);

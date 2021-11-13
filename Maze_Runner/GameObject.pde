@@ -1,4 +1,4 @@
-/* Crea una clase abstracta de nombre GameObject */
+/* Crea una clase abstracta de nombre GameObject que será la base para los objetos */
 abstract class GameObject {
 
   // ---------------- Zona de atributos ------------------- //

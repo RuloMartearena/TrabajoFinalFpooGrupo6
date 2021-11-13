@@ -1,4 +1,4 @@
-/** Crea una clase de nombre FamilyList */
+/* Crea una clase de nombre FamilyList */
 class FamilyList {
   // ------------------ Zona de atributos ----------------- //
   private Family[] kin;

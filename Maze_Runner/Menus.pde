@@ -1,11 +1,5 @@
 /* Clase menu que mostrará las distintas pantallas con mensajes en el juego */
 class Menus extends FrameObject {
-  //class Menus {
-
-
-  // ------- Zona de constructores ------- //
-
-
 
   // ---------------- Zona de atributos ------------------- //
 
@@ -15,7 +9,6 @@ class Menus extends FrameObject {
   private PImage fondo;
   /* Representa el color de la letra */
   private color fontColor;
-
   /* Representa el atributo gif */
   private PImage[] gif;
   /* Representa el numero de frames del Marcianito */
@@ -31,7 +24,7 @@ class Menus extends FrameObject {
     this.fondo = loadImage("resources/images/fondo.png");
     textFont(this.fuente);
     this.fontColor = (#902A2A);
-    /*Constructor parametrizado para fondo final*/
+    // Constructor parametrizado para fondo final
     this.numberOfFrames = 380;
     this.gif = new PImage[numberOfFrames];
     int i = 0;
@@ -66,19 +59,53 @@ class Menus extends FrameObject {
 
   /* Muentra el mensaje cuando ganas */
   public void displayWin() {
-
-
     textSize(50);
-    text(Constants.WIN, 190, height/3);
+    text(Constants.WIN, 190, height/3); // texto que indica que se gano el juego
     textSize(15);
     text(Constants.INSTRUCTION_WIN, width/2-90, height-40);
-
-
     imageMode(CENTER); //imagen del marcianitooooo
     image(gif[f], width/2, height/2, this.widthFrame, this.heightFrame); // posicion del gif o cantidad de frames
     f = f + 1;
     if (f == numberOfFrames) f = 0;
     this.widthFrame = 128;
     this.heightFrame = 190;
+  }
+
+  // -------------------- Zona de metodos --------------- //
+
+  // Fuente
+  public void setFuente(PFont fuente) {
+    this.fuente = fuente;
+  }
+  public PFont getfuente() {
+    return this.fuente;
+  }
+  // Fondo
+  public void setFondo(PImage fondo) {
+    this.fondo = fondo;
+  }
+  public PImage getFondo() {
+    return this.fondo;
+  }
+  // fontColor
+  public void setFontColor(color fontColor) {
+    this.fontColor = fontColor;
+  }
+  public color getFontColor() {
+    return this.fontColor;
+  }
+  // Numero de frames
+  public void setNumberOfFrames(int numberOfFrames) {
+    this.numberOfFrames = numberOfFrames;
+  }
+  public int getNumberOfFrames() {
+    return this.numberOfFrames;
+  }
+  // f 
+  public void setF(int f) {
+    this.f = f;
+  }
+  public int getF() {
+    return this.f;
   }
 }
