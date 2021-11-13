@@ -26,7 +26,7 @@ public void setup() {
   character = new MainCharacter(0, 0, 5, maze);
   // -- Gato -- //
   cat = new Cat(new PVector(0, 0));
-  cat.setPosition(new PVector (20, 20));
+  cat.setPosition(new PVector (-20, -30));
   // -- Enemigo -- //
   enemy = new Enemy(new PVector(0, 0));
   enemy.setPosition(new PVector (200, 50));
