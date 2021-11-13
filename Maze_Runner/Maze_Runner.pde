@@ -9,10 +9,8 @@ private Labyrinth maze;
 private Menus menus;
 private int mode; // Variable del sketch para los menus
 private Cat cat;
-
-private Enemy[]enemies = new Enemy [6];
-private Enemy enemy;
-private FamilyList familylist;
+private Family []family = new Family[3];;
+private Enemy [] enemies = new Enemy [6];
 
 
 // ---------- Configuración inicial -------------- //
@@ -37,9 +35,8 @@ public void setup() {
     enemies [i] = new Enemy(new PVector(width/2, i*(height-20)/enemies.length), new PVector(random(1, 15), 0));
   }
   // -- Familiares --//
-  familylist = new FamilyList();
-  for(int i=0;i<familylist.kin.length;i++){
-      familylist.kin[i] = new Family((int)random(73),(int)random(40),5);
+  for(int i=0;i<family.length;i++){
+      family[i] = new Family((int)random(73),(int)random(40),5);
     }
 }
 
@@ -68,12 +65,10 @@ public void draw() {
       enemies[i].display();
       enemies[i].move();
     }
-    familylist.kin[0].display();
-    familylist.kin[0].colision(character); 
-    familylist.kin[1].display();
-    familylist.kin[1].colision(character);
-    familylist.kin[2].display();
-    familylist.kin[2].colision(character); 
+    for (int i=0; i< family.length; i++) {
+      family[i].display();
+      family[i].colision(character);
+    }
 
     break;
   case 3:
