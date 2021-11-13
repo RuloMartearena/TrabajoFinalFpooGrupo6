@@ -43,15 +43,15 @@ class Cell {
   public void display() {
     stroke(colorCell); // Aplica color a las celdas
     if (upWall) {
-      line(0, 0, 15, 0); // dibuja lineas
+      line(0, 0, 15, 0); // dibuja lineas (punto inicial y ancho de las celdas de arriba de 15 pixeles | cada celda mide 15 pixeles)
     }
     if (rightWall) {
       line(15, 0, 15, 15); // dibuja lineas
     }
     if (ball) {
-      noStroke();
-      fill(this.colorBall);
-      ellipse(this.posXBall, this.posYBall, this.radiusBall, this.radiusBall);
+      noStroke(); // Saca los bordes a las ellipses
+      fill(this.colorBall); // Da color a las ellipses (verde oscuro)
+      ellipse(this.posXBall, this.posYBall, this.radiusBall, this.radiusBall); // Dibuja una ellipse
     }
   }
 

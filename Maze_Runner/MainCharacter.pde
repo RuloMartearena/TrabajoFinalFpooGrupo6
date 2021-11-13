@@ -1,4 +1,4 @@
-/* Crea una clase llamada MainCharacter que hereda de la clase GameObject */
+/* Representa al jugador */
 class MainCharacter extends GameObject {
 
   // ---------------- Zona de atributos ------------------- //
@@ -16,7 +16,7 @@ class MainCharacter extends GameObject {
 
   // ----------------- Zona de constructores ---------------- //
 
-  /* Constructor */
+  /* Constructor parametrizado y por defecto */
   public MainCharacter(int positionX, int positionY, int radius, Labyrinth maze) {
     this.positionX = positionX;
     this.positionY = positionY;
@@ -45,13 +45,12 @@ class MainCharacter extends GameObject {
     fill(#AFADAD); // color de las letras (gris oscuro | el mismo que el del laberinto y las celdas)
     text(Constants.POINTS_PLAYER+this.points, -1, -10); // mensaje
     maze.celdas[0][0].ball = false;//no aparecera la primera bolita para que el jugador empieze con 0 puntos
-     if (character.positionX == character.nextPositionX && character.positionY == character.nextPositionY) {     
+    if (character.positionX == character.nextPositionX && character.positionY == character.nextPositionY) {     
       if (maze.celdas[character.nextPositionX][character.nextPositionY].ball == true) {
-          maze.celdas[character.nextPositionX][character.nextPositionY].ball = false;
-          points++;
-          println(points);//imprime los puntos por consola        
-        }
-     }
+        maze.celdas[character.nextPositionX][character.nextPositionY].ball = false;
+        points++;
+      }
+    }
   }
 
   /* Desplaza al jugador de manera mas suave */
@@ -90,16 +89,10 @@ class MainCharacter extends GameObject {
         this.nextPositionY = newY;
       }
     }
-    
-    
-    
-    
-    
-    
-    
   }
 
   // -------------------- Zona de metodos --------------- //
+
   // Siguiente posicion en X
   /* Cambia el valor de la siguiente posicion del objeto */
   public void setNextPositionX (int nextPositionX) {
@@ -126,7 +119,11 @@ class MainCharacter extends GameObject {
   public float getVelocity() {
     return this.velocity;
   }
-    
-  
-  
+  // Puntos
+  public void setPoints(int points) {
+    this.points = points;
+  }
+  public int getPoints() {
+    return this.points;
+  }
 }
