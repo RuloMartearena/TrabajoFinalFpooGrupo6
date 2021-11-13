@@ -40,7 +40,7 @@ class Cat extends FrameObject {
   public void move() {
     this.position.add(this.velocity);
 
-    if (position.x<width-80) {
+    if (position.x<=width-80) {
       if (position.y<=-30) {
         positionFrameY=160;
         positionFrameX+= this.widthFrame;
@@ -65,6 +65,7 @@ class Cat extends FrameObject {
         velocity.x = velocity.x*(-3);
       }
     }
+  
 
     if (position.x<-20) {
       if (position.y>-10) {

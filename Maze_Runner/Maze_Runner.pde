@@ -9,8 +9,11 @@ private Labyrinth maze;
 private Menus menus;
 private int mode; // Variable del sketch para los menus
 private Cat cat;
+
+private Enemy[]enemies = new Enemy [6];
 private Enemy enemy;
 private FamilyList familylist;
+
 
 // ---------- Configuración inicial -------------- //
 public void setup() {
@@ -29,8 +32,10 @@ public void setup() {
   cat = new Cat(new PVector(0, 0));
   cat.setPosition(new PVector (-20, -30));
   // -- Enemigo -- //
-  enemy = new Enemy(new PVector(0, 0));
-  enemy.setPosition(new PVector (200, 50));
+
+  for (int i=0; i < enemies.length; i++) {
+    enemies [i] = new Enemy(new PVector(width/2, i*(height-20)/enemies.length), new PVector(random(1, 15), 0));
+  }
   // -- Familiares --//
   familylist = new FamilyList();
   for(int i=0;i<familylist.kin.length;i++){
@@ -58,14 +63,18 @@ public void draw() {
     character.display(); // dibujo del jugador
     cat.display();
     cat.move();
-    enemy.display();
-    enemy.move();
+
+    for (int i=0; i< enemies.length; i++) {
+      enemies[i].display();
+      enemies[i].move();
+    }
     familylist.kin[0].display();
     familylist.kin[0].colision(character); 
     familylist.kin[1].display();
     familylist.kin[1].colision(character);
     familylist.kin[2].display();
     familylist.kin[2].colision(character); 
+
     break;
   case 3:
     menus.displayWin(); // mensaje de que se gano el juego
@@ -79,6 +88,12 @@ public void draw() {
     break;
   }
 }
+
+
+
+
+
+
 
 // ------- keyPressed para menus ------ //
 public void keyPressed() {

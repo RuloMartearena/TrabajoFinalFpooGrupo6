@@ -5,22 +5,20 @@ class Enemy extends FrameObject {
 
   /**Representa la velocidad de Cat */
   private PVector velocity;
+  private float radio;
 
-
-  private boolean direction;
 
   //--------------------Zona de constructores---------------//
 
-  public Enemy(PVector position) {
+  public Enemy(PVector position, PVector velocity) {
     this.sprites = requestImage("resources/images/SlimeEnemy.png");
     this.position = position;
     this.widthFrame = 200;
     this.heightFrame = 200;
     this.positionFrameX = 0;
     this.positionFrameY = 0;
-    this.velocity = new PVector (0, 1);
-    this.direction = true;
-    this.direction=position.x+1>position.x;
+    this.velocity = velocity;
+    this.radio=25;
   }
 
   //-------------------Zona de Operaciones--------------//
@@ -32,32 +30,23 @@ class Enemy extends FrameObject {
     frame.resize(50, 50);
     imageMode(CENTER);
     image(frame, this.position.x, this.position.y);
-   
-    
-   if (positionFrameX<(sprites.width-widthFrame)){ 
+
+
+    if (positionFrameX<(sprites.width-widthFrame)) { 
       positionFrameX+= this.widthFrame;
     } else {
       positionFrameX= 0;
-      direction=false;
     }
-    
-    
-    
-    
   }
 
   public void move() {
-    this.position.add(this.velocity);
-    if ((position.y >1200)||(position.y<350)) {
-      velocity.y = velocity.y+1;
-      positionFrameY = 0;
-    } else {
-      positionFrameY = 600;
-      
-      velocity.y = velocity.y-(2.6);
+
+    position.add(velocity);
+    if (position.x > (width-140) || position.x < 12) {
+
+      velocity.x = velocity.x*(-1);
     }
   }
-
   //------------zona de métodos--------------((
 
   /**Cambia el valor del atributo velocity*/
