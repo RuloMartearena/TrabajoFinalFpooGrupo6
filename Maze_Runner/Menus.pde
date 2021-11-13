@@ -31,7 +31,7 @@ class Menus extends FrameObject {
     this.fondo = loadImage("resources/images/fondo.png");
     textFont(this.fuente);
     this.fontColor = (#902A2A);
-/*Constructor parametrizado para fondo final*/
+    /*Constructor parametrizado para fondo final*/
     this.numberOfFrames = 380;
     this.gif = new PImage[numberOfFrames];
     int i = 0;
@@ -72,8 +72,8 @@ class Menus extends FrameObject {
     text(Constants.WIN, 190, height/3);
     textSize(15);
     text(Constants.INSTRUCTION_WIN, width/2-90, height-40);
-    
-    
+
+
     imageMode(CENTER); //imagen del marcianitooooo
     image(gif[f], width/2, height/2, this.widthFrame, this.heightFrame); // posicion del gif o cantidad de frames
     f = f + 1;

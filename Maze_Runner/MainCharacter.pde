@@ -82,6 +82,13 @@ class MainCharacter extends GameObject {
         this.nextPositionY = newY;
       }
     }
+    
+    
+    
+    
+    
+    
+    
   }
 
   // -------------------- Zona de metodos --------------- //
@@ -111,4 +118,7 @@ class MainCharacter extends GameObject {
   public float getVelocity() {
     return this.velocity;
   }
+    
+  
+  
 }
