@@ -5,11 +5,11 @@ class Marcianito extends FrameObject{
   // ------- Zona de atributos ------- /
   
   /* Representa el atributo gif */
-  private PImage[] gif;
+  protected PImage[] gif;
   /* Representa el numero de frames del Marcianito */
-  private int numberOfFrames;
+  protected int numberOfFrames;
   /* Representa un atributo del tipo entero f */
-  private int f;
+  protected int f;
   
   // ------- Zona de constructores ------- //
   
@@ -25,7 +25,7 @@ class Marcianito extends FrameObject{
   // ------- Zona de operaciones ------- //
   
   /** Muestra en el lienzo la cantidad de Frames del Marcianito */
-  public void display(){
+ /** public void display(){
     int i = 0;
     while (i < numberOfFrames){ 
       gif[i] = loadImage("frame_"+i+"_delay-0.02s.gif"); // carga desde la carpeta al lienzo cada frame
@@ -36,5 +36,5 @@ class Marcianito extends FrameObject{
       if (f == numberOfFrames) f = 0;
     }
     
-  }
+  }*/
 }

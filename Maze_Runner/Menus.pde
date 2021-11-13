@@ -1,5 +1,11 @@
 /* Clase menu que mostrará las distintas pantallas con mensajes en el juego */
-class Menus {
+class Menus extends FrameObject {
+  //class Menus {
+
+
+  // ------- Zona de constructores ------- //
+
+
 
   // ---------------- Zona de atributos ------------------- //
 
@@ -10,6 +16,13 @@ class Menus {
   /* Representa el color de la letra */
   private color fontColor;
 
+  /* Representa el atributo gif */
+  private PImage[] gif;
+  /* Representa el numero de frames del Marcianito */
+  private int numberOfFrames;
+  /* Representa un atributo del tipo entero f */
+  private int f;
+
   // ----------------- Zona de constructores ---------------- //
 
   /* Constructor parametrizado */
@@ -18,6 +31,15 @@ class Menus {
     this.fondo = loadImage("resources/images/fondo.png");
     textFont(this.fuente);
     this.fontColor = (#902A2A);
+/*Constructor parametrizado para fondo final*/
+    this.numberOfFrames = 380;
+    this.gif = new PImage[numberOfFrames];
+    int i = 0;
+    while (i < numberOfFrames) { 
+      gif[i] = loadImage("frame_"+i+"_delay-0.02s.gif"); // carga desde la carpeta al lienzo cada frame
+      i=i+1;
+      this.position = new PVector (width/3, height/2);
+    }
   }
 
   // ---------- Zona de operaciones ------------ //
@@ -44,9 +66,19 @@ class Menus {
 
   /* Muentra el mensaje cuando ganas */
   public void displayWin() {
+
+
     textSize(50);
-    text(Constants.WIN, 230, height/2);
+    text(Constants.WIN, 190, height/3);
     textSize(15);
     text(Constants.INSTRUCTION_WIN, width/2-90, height-40);
+    
+    
+    imageMode(CENTER); //imagen del marcianitooooo
+    image(gif[f], width/2, height/2, this.widthFrame, this.heightFrame); // posicion del gif o cantidad de frames
+    f = f + 1;
+    if (f == numberOfFrames) f = 0;
+    this.widthFrame = 128;
+    this.heightFrame = 190;
   }
 }
