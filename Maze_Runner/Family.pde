@@ -26,17 +26,17 @@ class Family extends GameObject {
 
   /* Detecta la colision entre objetos de tipo Famili y objetos de tipo Maincharacter */
   public void colision(MainCharacter personaje) {
-    if (familylist.kin[0].getPositionX() == personaje.getPositionX() && familylist.kin[0].getPositionY() == personaje.getPositionY()) {
-      familylist.kin[0].setPositionX(72);
-      familylist.kin[0].setPositionY(-1);
+    if (family[0].getPositionX() == personaje.getPositionX() && family[0].getPositionY() == personaje.getPositionY()) {
+        family[0].setPositionX(72);
+        family[0].setPositionY(-1);
     }
-    if (familylist.kin[1].getPositionX() == personaje.getPositionX() && familylist.kin[1].getPositionY() == personaje.getPositionY()) {
-      familylist.kin[1].setPositionX(71);
-      familylist.kin[1].setPositionY(-1);
+    if (family[1].getPositionX() == personaje.getPositionX() && family[1].getPositionY() == personaje.getPositionY()) {
+        family[1].setPositionX(71);
+        family[1].setPositionY(-1);
     }
-    if (familylist.kin[2].getPositionX() == personaje.getPositionX() && familylist.kin[2].getPositionY() == personaje.getPositionY()) {
-      familylist.kin[2].setPositionX(70);
-      familylist.kin[2].setPositionY(-1);
+    if (family[2].getPositionX() == personaje.getPositionX() && family[2].getPositionY() == personaje.getPositionY()) {
+        family[2].setPositionX(70);
+        family[2].setPositionY(-1);
     }
   }
   // ------------------ Zona de metodos ----------------- //
