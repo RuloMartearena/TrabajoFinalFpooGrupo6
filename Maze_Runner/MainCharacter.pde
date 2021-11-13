@@ -1,7 +1,6 @@
 /* Crea una clase llamada MainCharacter que hereda de la clase GameObject */
 class MainCharacter extends GameObject {
 
-
   // ---------------- Zona de atributos ------------------- //
 
   /* Representa el mapa del laberinto que tiene el jugador */
@@ -12,6 +11,8 @@ class MainCharacter extends GameObject {
   private int nextPositionY;
   /* Representa la velocidad a la que se mueve el jugador */
   private float velocity;
+  /* Representa los puntos del jugador */
+  private int points;
 
   // ----------------- Zona de constructores ---------------- //
 
@@ -23,8 +24,9 @@ class MainCharacter extends GameObject {
     this.nextPositionX = positionX;
     this.nextPositionY = positionY;
     this.velocity = 0.3;
-    this.colorObject = #E047E3; // (rosa)
+    this.colorObject = (#EF7F1A); // (anaranjado)
     this.radius = radius;
+    this.points = 0;
   }
 
   // -------------------- Zona de operaciones -------------- //
@@ -34,6 +36,14 @@ class MainCharacter extends GameObject {
     noStroke(); // saca los bordes a la forma
     fill(this.colorObject); // color del personaje (rosa)
     circle(this.positionX*15+8, this.positionY*15+8, this.radius*2); // dibuja un circulo que representa al personaje principal
+  }
+
+  /* Cuenta y aumenta los puntos */
+  public void collectPoints() {
+    this.maze.celdas[this.nextPositionX][this.nextPositionY].ball = false; // elimina las pelotas por donde el personaje pase
+    textSize(15);
+    fill(#AFADAD); // color de las letras (gris oscuro | el mismo que el del laberinto y las celdas)
+    text(Constants.POINTS_PLAYER+this.points, -1, -10); // mensaje
   }
 
   /* Desplaza al jugador de manera mas suave */
