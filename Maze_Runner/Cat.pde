@@ -40,39 +40,39 @@ class Cat extends FrameObject {
   public void move() {
     this.position.add(this.velocity);
 
-    if (position.x<width-35) {
-      if (position.y<=20) {
+    if (position.x<width-80) {
+      if (position.y<=-30) {
         positionFrameY=160;
         positionFrameX+= this.widthFrame;
         velocity.y=0;
         velocity.x=1;
-        velocity.x = velocity.x*10;
+        velocity.x = velocity.x*3;
       }
     } else {
       positionFrameY=0;
       positionFrameX+= this.widthFrame;
       velocity.x = 0;
       velocity.y=1;
-      velocity.y = velocity.y*10;
+      velocity.y = velocity.y*3;
     }
 
-    if (position.y> height-35) {
+    if (position.y> height-90) {
       if (position.x>20) {
         positionFrameY=480;
         positionFrameX+= this.widthFrame;
         velocity.y = 0;
         velocity.x=1;
-        velocity.x = velocity.x*(-10);
+        velocity.x = velocity.x*(-3);
       }
     }
 
-    if (position.x<30) {
-      if (position.y>30) {
+    if (position.x<-20) {
+      if (position.y>-10) {
         positionFrameY=320;
         positionFrameX+= this.widthFrame;
         velocity.y = 1;
         velocity.x=0;
-        velocity.y = velocity.y*(-10);
+        velocity.y = velocity.y*(-3);
       }
     }
   }
