@@ -33,7 +33,7 @@ public void setup() {
   }
   // -- Familiares --//
   for (int i=0; i<family.length; i++) {
-    family[i] = new Family((int)random(73), (int)random(40), 5);
+    family[i] = new Family((int)random(4),0,5);//(int)random(73), (int)random(40), 5);
   }
 }
 // ---------- Invocación de metodos ------------ //
