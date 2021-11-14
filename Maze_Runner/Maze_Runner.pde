@@ -86,8 +86,8 @@ public void draw() {
       family[i].setFamilyPoints(0);
     }
     for (int i=0; i<family.length; i++) {
-      family[i].setPositionX(2);
-      family[i].setPositionY(2);
+      family[i].setPositionX((int)random(73));
+      family[i].setPositionY((int)random(40));
     }
     // Falta restablecer las posiciones de los enemigos
     break;
