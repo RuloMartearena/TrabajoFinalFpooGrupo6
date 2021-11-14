@@ -81,7 +81,7 @@ public void draw() {
     character.setPositionY(0);
     character.setNextPositionX(0);
     character.setNextPositionY(0);
-    character.setPoints(0);
+    character.setPoints(1);
     for (int i=0; i< family.length; i++) {
       family[i].setFamilyPoints(0);
     }
