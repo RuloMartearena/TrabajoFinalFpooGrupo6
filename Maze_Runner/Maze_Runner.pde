@@ -63,13 +63,17 @@ public void draw() {
     }
     // Estructura iterativa que dibuja a todos los familiares
     for (int i=0; i< family.length; i++) {
+      family[i].familyPoints();
       family[i].display();
       family[i].colision(character);
+      if (family[i].getFamilyPoints() == 1 && character.getPoints() == 2920) {  
+        menus.displayWin(); // mensaje de que se gano el juego
+      }
     }
     break;
   case 3:
     // Aqui debería ir una estructura iterativa if con los puntos y los contadores de los familiares para que mande el mensaje de que se gano
-    menus.displayWin(); // mensaje de que se gano el juego
+    menus.displayInstruccion();
     maze.resetLabyrinth(); // resetea el laberinto
     maze.moving(0, 0, 0, 0); // genera otro laberinto
     // reposiciona al jugador
@@ -77,7 +81,15 @@ public void draw() {
     character.setPositionY(0);
     character.setNextPositionX(0);
     character.setNextPositionY(0);
-    // Falta restablecer las posiciones de los enemigos, los familiares, los puntos y los puntos de los familiares
+    character.setPoints(0);
+    for (int i=0; i< family.length; i++) {
+      family[i].setFamilyPoints(0);
+    }
+    for (int i=0; i<family.length; i++) {
+      family[i].setPositionX(2);
+      family[i].setPositionY(2);
+    }
+    // Falta restablecer las posiciones de los enemigos
     break;
   }
 }

@@ -60,15 +60,20 @@ class Menus extends FrameObject {
   /* Muentra el mensaje cuando ganas */
   public void displayWin() {
     textSize(50);
-    text(Constants.WIN, 190, height/3); // texto que indica que se gano el juego
+    text(Constants.WIN, 30, height/3); // texto que indica que se gano el juego
     textSize(15);
-    text(Constants.INSTRUCTION_WIN, width/2-90, height-40);
+    text(Constants.INSTRUCTION_WIN, width/2-140, height-80);
     imageMode(CENTER); //imagen del marcianitooooo
     image(gif[f], width/2, height/2, this.widthFrame, this.heightFrame); // posicion del gif o cantidad de frames
     f = f + 1;
     if (f == numberOfFrames) f = 0;
     this.widthFrame = 128;
     this.heightFrame = 190;
+  }
+
+  public void displayInstruccion() {
+    textSize(15);
+    text(Constants.INSTRUCTION_WIN, width/2-140, height-80);
   }
 
   // -------------------- Zona de metodos --------------- //
