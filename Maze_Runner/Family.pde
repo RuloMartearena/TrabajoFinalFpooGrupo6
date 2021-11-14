@@ -3,8 +3,6 @@ class Family extends GameObject {
 
   // ------------------ Zona de atributos ----------------- //
 
-
-
   // ------------------ Zona de constructores ----------------- //
 
   /* Constructor parametrizado y por defecto */
@@ -27,17 +25,20 @@ class Family extends GameObject {
   /* Detecta la colision entre objetos de tipo Famili y objetos de tipo Maincharacter */
   public void colision(MainCharacter personaje) {
     if (family[0].getPositionX() == personaje.getPositionX() && family[0].getPositionY() == personaje.getPositionY()) {
-        family[0].setPositionX(72);
-        family[0].setPositionY(-1);
+      family[0].setPositionX(72);
+      family[0].setPositionY(-1);
     }
     if (family[1].getPositionX() == personaje.getPositionX() && family[1].getPositionY() == personaje.getPositionY()) {
-        family[1].setPositionX(71);
-        family[1].setPositionY(-1);
+      family[1].setPositionX(71);
+      family[1].setPositionY(-1);
     }
     if (family[2].getPositionX() == personaje.getPositionX() && family[2].getPositionY() == personaje.getPositionY()) {
-        family[2].setPositionX(70);
-        family[2].setPositionY(-1);
+      family[2].setPositionX(70);
+      family[2].setPositionY(-1);
     }
   }
+
+  // Aqui deberia ir la operacion con el condicionante if para que salga el cartel de win
+
   // ------------------ Zona de metodos ----------------- //
 }

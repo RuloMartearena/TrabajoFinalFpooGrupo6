@@ -40,8 +40,6 @@ class MainCharacter extends GameObject {
 
   /* Cuenta y aumenta los puntos */
   public void collectPoints() {
-    //this.maze.celdas[this.nextPositionX][this.nextPositionY].ball = false; // elimina las pelotas por donde el personaje pase
-    //textSize(15);
     fill(#AFADAD); // color de las letras (gris oscuro | el mismo que el del laberinto y las celdas)
     text(Constants.POINTS_PLAYER+this.points, -1, -10); // mensaje
     maze.celdas[0][0].ball = false;//no aparecera la primera bolita para que el jugador empieze con 0 puntos
