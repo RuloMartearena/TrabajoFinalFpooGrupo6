@@ -26,7 +26,7 @@ class MainCharacter extends GameObject {
     this.velocity = 0.3;
     this.colorObject = (#EF7F1A); // (anaranjado)
     this.radius = radius;
-    this.points = 0;
+    this.points = 1;
   }
 
   // -------------------- Zona de operaciones -------------- //
