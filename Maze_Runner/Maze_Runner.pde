@@ -72,6 +72,7 @@ public void draw() {
     familylist.kin[2].colision(character); 
     break;
   case 3:
+    // aqui deberia ir un condicionante if para que se muestre el cartel de victoria
     menus.displayWin(); // mensaje de que se gano el juego
     maze.resetLabyrinth(); // resetea el laberinto
     maze.moving(0, 0, 0, 0); // genera otro laberinto
@@ -80,6 +81,7 @@ public void draw() {
     character.setPositionY(0);
     character.setNextPositionX(0);
     character.setNextPositionY(0);
+    // falta reposicionamiento de los familiares, de los enemigos, re contado de los puntos y recontado de los familiares rescatados. 
     break;
   }
 }
