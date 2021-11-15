@@ -10,7 +10,6 @@ private Labyrinth maze; // Variable del  Laberinto
 private Menus menus; // Variable del  Menus
 private Cat cat; // Variable del Gato
 private Family []family = new Family[3]; // Variable tipo array de los Familiares
-private Enemy [] enemies = new Enemy [6]; // Variable tipo array de los Enemigos
 
 /* ---------- Configuración inicial -------------- */
 public void setup() {
@@ -27,10 +26,6 @@ public void setup() {
   character = new MainCharacter(0, 0, 5, maze); // (posX, posY, radio, laberinto)
   // Gato
   cat = new Cat(new PVector(-20, -30)); // (posX, posY)
-  // Enemigo
-  for (int i=0; i < enemies.length; i++) {
-    enemies [i] = new Enemy(new PVector(width/2, i*(height-20)/enemies.length), new PVector(random(1, 15), 0)); // (posX, posY, velX, velY)
-  }
   // Familiares
   for (int i=0; i<family.length; i++) {
     family[i] = new Family((int)random(73), (int)random(40), 5); // (posX, posY, radio)
@@ -66,11 +61,6 @@ public void draw() {
         menus.displayWin(); // mensaje de que se gano el juego
       }
     }
-    // Estructura iterativa que dibuja a todos los enemigos
-    for (int i=0; i< enemies.length; i++) {
-      enemies[i].display();
-      enemies[i].move();
-    }
     break;
   case 3:
     menus.displayInstruccion(); // Instrucciones para seguir jugando
@@ -87,7 +77,6 @@ public void draw() {
       family[i].setPositionX((int)random(73));
       family[i].setPositionY((int)random(40));
     }
-    // Falta restablecer las posiciones de los enemigos
     break;
   }
 }
