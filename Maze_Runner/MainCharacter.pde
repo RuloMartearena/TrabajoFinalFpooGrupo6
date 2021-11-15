@@ -1,22 +1,22 @@
-/* Representa al jugador */
+/** Representa al jugador */
 class MainCharacter extends GameObject {
 
-  // ---------------- Zona de atributos ------------------- //
+  // -------------------- Zona de atributos -------------------- //
 
-  /* Representa el mapa del laberinto que tiene el jugador */
+  /** Representa el mapa del laberinto que tiene el jugador */
   private Labyrinth maze;
-  /* Representa la posicion siguente del objeto para suavizar el movimiento */
+  /** Representa la posicion siguente del objeto para suavizar el movimiento */
   private int nextPositionX;
-  /* Representa la posicion siguente del objeto para suavizar el movimiento */
+  /** Representa la posicion siguente del objeto para suavizar el movimiento */
   private int nextPositionY;
-  /* Representa la velocidad a la que se mueve el jugador */
+  /** Representa la velocidad a la que se mueve el jugador */
   private float velocity;
-  /* Representa los puntos del jugador */
+  /** Representa los puntos del jugador */
   private int points;
 
-  // ----------------- Zona de constructores ---------------- //
+  // -------------------- Zona de constructores -------------------- //
 
-  /* Constructor parametrizado y por defecto */
+  /** Constructor */
   public MainCharacter(int positionX, int positionY, int radius, Labyrinth maze) {
     this.positionX = positionX;
     this.positionY = positionY;
@@ -29,16 +29,16 @@ class MainCharacter extends GameObject {
     this.points = 1;
   }
 
-  // -------------------- Zona de operaciones -------------- //
+  // -------------------- Zona de operaciones -------------------- //
 
-  /* Dibuja un personaje */
+  /** Dibuja un personaje */
   public void display() {
     noStroke(); // saca los bordes a la forma
     fill(this.colorObject); // color del personaje (rosa)
     circle(this.positionX*15+8, this.positionY*15+8, this.radius*2); // dibuja un circulo que representa al personaje principal
   }
 
-  /* Cuenta y aumenta los puntos */
+  /** Cuenta y aumenta los puntos */
   public void collectPoints() {
     fill(#AFADAD); // color de las letras (gris oscuro | el mismo que el del laberinto y las celdas)
     text(Constants.POINTS_PLAYER+this.points, -1, -10); // mensaje
@@ -51,7 +51,7 @@ class MainCharacter extends GameObject {
     }
   }
 
-  /* Desplaza al jugador de manera mas suave */
+  /** Desplaza al jugador de manera mas suave */
   public void displace() {
     if (abs(this.positionX-nextPositionX)<this.velocity) this.positionX = nextPositionX; // redondea los decimales para que no salte error al mover al jugador
     if (abs(this.positionY-nextPositionY)<this.velocity) this.positionY = nextPositionY; // redondea los decimales para que no salte error al mover al jugador
@@ -67,7 +67,7 @@ class MainCharacter extends GameObject {
     }
   }  
 
-  /* Mueve el personaje */
+  /** Mueve el personaje */
   public void move(int moveX, int moveY) {  // Los parametros usados es la cantidad que se desea mover  
     // variables que representan a la nueva posicion (se usa para que el personaje se mueva)
     int newX = this.nextPositionX + moveX;

@@ -1,34 +1,34 @@
-/* Clase que representa la base para los sprites */
+/** Clase que representa la base para los sprites */
 class FrameObject {
 
   // ------------------ Zona de atributos ----------------- //
 
-  /* Representa la pisicion de los objetos */
+  /** Representa la pisicion de los objetos */
   protected PVector position;
-  /* Representa la posicion en X en el lienzo del sprite */
+  /** Representa la posicion en X en el lienzo del sprite */
   protected Integer positionX;
-  /* Representa la posicion en Y en el lienzo del sprite */
+  /** Representa la posicion en Y en el lienzo del sprite */
   protected Integer positionY;
-  /* Representa la posicion en X del frame */
+  /** Representa la posicion en X del frame */
   protected int positionFrameX;
-  /* Representa la posicion en Y del frame */
+  /** Representa la posicion en Y del frame */
   protected int positionFrameY;
-  /* Representa el ancho del sprite */
+  /** Representa el ancho del sprite */
   protected int widthFrame;
-  /* Representa el alto del sprite */
+  /** Representa el alto del sprite */
   protected int heightFrame;
-  /* Representa la imagen que será el sprite */
+  /** Representa la imagen que será el sprite */
   protected PImage sprites;
 
   // ------------------ Zona de constructores ----------------- //
 
-  /* Constructor en blanco */
+  /** Constructor en blanco */
   public FrameObject() {
   }
 
   // ------------------ Zona de operaciones ----------------- //
 
-  /* Dibuja el sprite */
+  /** Dibuja el sprite */
   public void display() {
     imageMode(CENTER);
     image(this.sprites, this.positionX, this.positionY, this.widthFrame, this.heightFrame);

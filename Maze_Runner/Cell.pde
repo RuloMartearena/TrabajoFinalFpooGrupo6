@@ -1,30 +1,30 @@
-/* Clase usada para las celdas del laberinto */
+/** Clase usada para las celdas del laberinto */
 class Cell {
 
-  // ------- Zona de atributos ------- //
+  // ---------- Zona de atributos ---------- //
 
-  /* Representa los muros de arriba de la celda */
+  /** Representa los muros de arriba de la celda */
   private boolean upWall;
-  /* Representa los muro de la derecha de la celda */
+  /** Representa los muro de la derecha de la celda */
   private boolean rightWall;
-  /* Representa si el muro ya fue visitado */
+  /** Representa si el muro ya fue visitado */
   private boolean visited;
-  /* Representa las bolas que se dibujan en el laberinto */
+  /** Representa las bolas que se dibujan en el laberinto */
   private boolean ball;
-  /* Representa el color de las celdas y las bolas */
+  /** Representa el color de las bolas */
   private color colorBall;
-  /* Representa la posicion en X de las bolas */
+  /** Representa la posicion en X de las bolas */
   private int posXBall;
-  /* Representa la posicion en Y de las bolas */
+  /** Representa la posicion en Y de las bolas */
   private int posYBall;
-  /* Representa el radio de las bolas en el laberinto */
+  /** Representa el radio de las bolas en el laberinto */
   private int radiusBall;
-  /* Representa el color de las celdas del laberinto */
+  /** Representa el color de las celdas del laberinto */
   private color colorCell;
 
-  // ------- Zona de constructores ------- //
+  // ---------- Zona de constructores ---------- //
 
-  /* Constructor por defecto */
+  /** Constructor */
   public Cell() {
     this.upWall = true;
     this.rightWall = true;
@@ -37,9 +37,9 @@ class Cell {
     this.colorCell = (#AFADAD); // (gris)
   }
 
-  // ------- Zona de operaciones ------- //
+  // ---------- Zona de operaciones ---------- //
 
-  /* Dibuja celdas */
+  /** Dibuja celdas */
   public void display() {
     stroke(colorCell); // Aplica color a las celdas
     if (upWall) {
@@ -55,65 +55,65 @@ class Cell {
     }
   }
 
-  // ------- Zona de metodos ------- //
+  // ---------- Zona de metodos ---------- //
 
-  // Muros superiores
+  /* Muros superiores */
   public void setUpWall(boolean upWall) {
     this.upWall = upWall;
   }
   public boolean getUpWall() {
     return this.upWall;
   }
-  // Muros derechos
+  /* Muros derechos */
   public void setRightWall(boolean rightWall) {
     this.rightWall = rightWall;
   }
   public boolean getRightWall() {
     return this.rightWall;
   }
-  // Visitado?
+  /* Visitado? */
   public void setVisited(boolean visited) {
     this.visited = visited;
   }
   public boolean getVisited() {
     return this.visited;
   }
-  // Bolas
+  /* Bolas */
   public void setBall(boolean ball) {
     this.ball = ball;
   }
   public boolean getBall() {
     return this.ball;
   }
-  // Color de las bolas
+  /* Color de las bolas */
   public void setColorBall(color colorBall) {
     this.colorBall = colorBall;
   }
   public color getColorBall() {
     return this.colorBall;
   }
-  // Posicion en X de las bolas
+  /* Posicion en X de las bolas */
   public void setPosXBall(int posXBall) {
     this.posXBall = posXBall;
   }
   public int getPosXBall() {
     return this.posXBall;
   }
-  // Posicion en Y de las bolas
+  /* Posicion en Y de las bolas */
   public void setPosYBall(int posYBall) {
     this.posYBall = posYBall;
   }
   public int getPosYBall() {
     return this.posYBall;
   }
-  // Radio de las bolas
+  /* Radio de las bolas */
   public void setRadiusBall(int radiusBall) {
     this.radiusBall = radiusBall;
   }
   public int getRadiusBall() {
     return this.radiusBall;
   }
-  // Color de las celdas
+  /* Color de las celdas */
   public void setColorCell(color colorCell) {
     this.colorCell=colorCell;
   }

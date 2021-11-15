@@ -1,26 +1,26 @@
-/* Crea una clase abstracta de nombre GameObject que será la base para los objetos */
+/** Crea una clase abstracta de nombre GameObject que será la base para los objetos */
 abstract class GameObject {
 
   // ---------------- Zona de atributos ------------------- //
 
-  /* Representa la posicion en x de los objetos */
+  /** Representa la posicion en x de los objetos */
   protected float positionX; 
-  /* Representa la posicion en y de los objetos */
+  /** Representa la posicion en y de los objetos */
   protected float positionY;
-  /* Representa el color de los objetos */
+  /** Representa el color de los objetos */
   protected color colorObject;
-  /* Representa el radio de los objetos */
+  /** Representa el radio de los objetos */
   protected Integer radius;
 
   // ----------------- Zona de constructores ---------------- //
 
-  /* Constructor en blanco */
+  /** Constructor en blanco */
   public GameObject() {
   }
 
   // ---------------- Zona de operaciones -------------------- //
 
-  /* Metodo abstracto display */
+  /** Metodo abstracto display */
   abstract public void display();
 
   // -------------- Zona de metodos ------------------- //

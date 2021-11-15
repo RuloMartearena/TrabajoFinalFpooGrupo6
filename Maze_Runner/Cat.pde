@@ -1,14 +1,14 @@
-/* Representa al gato que camina por el laberinto */
+/** Representa al gato que camina por el laberinto */
 class Cat extends FrameObject {
 
-  //-------------------------Zona de atributos---------------//
+  // --------------- Zona de atributos --------------- //
 
-  /* Representa la velocidad del gato */
+  /** Representa la velocidad del gato */
   private PVector velocity;
 
-  //--------------------Zona de constructores---------------//
+  // --------------- Zona de constructores --------------- //
 
-  /* Constructor parametrizado y por defecto */
+  /** Constructor */
   public Cat(PVector position) {
     this.sprites = requestImage("resources/images/Cat.png");
     this.position = position;
@@ -21,22 +21,22 @@ class Cat extends FrameObject {
     this.velocity = new PVector(0, 0);
   }
 
-  //-------------------Zona de Operaciones--------------//
+  // ----------------- Zona de Operaciones -------------- //
 
-  /* Dibuja al gato */
+  /** Dibuja al gato */
   public void display() {
     PImage frame = sprites.get(this.positionFrameX, this.positionFrameY, this.widthFrame, this.heightFrame);
     frame.resize(50, 50);
     imageMode(CENTER);
     image(frame, this.position.x, this.position.y);
-    if (positionFrameX<(sprites.width-widthFrame)) { // (sprites.width+this.widthFrame)
+    if (positionFrameX<(sprites.width-widthFrame)) {
       positionFrameX+= this.widthFrame;
     } else {
       positionFrameX=0;
     }
   }
 
-  /* Permite que el gato se mueva */
+  /** Permite que el gato se mueva */
   public void move() {
     this.position.add(this.velocity); // Metodo add para agregar velocidad
     if (position.x<=width-80) {
@@ -73,9 +73,10 @@ class Cat extends FrameObject {
       }
     }
   }
-  //------------zona de métodos--------------((
 
-  // Velocidad
+  // ------------ Zona de métodos -------------- //
+
+  /* Velocidad */
   public void setVelocity(PVector velocity) {
     this.velocity = velocity;
   }

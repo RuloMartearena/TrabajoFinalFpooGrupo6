@@ -1,16 +1,16 @@
-/* Representa a los enemigos dentro del juego */
+/** Representa a los enemigos dentro del juego */
 class Enemy extends FrameObject {
 
-  //-------------------------Zona de atributos---------------//
+  // --------------- Zona de atributos --------------- //
 
-  /* Representa la velocidad de los enemigos */
+  /** Representa la velocidad de los enemigos */
   private PVector velocity;
-  /* Representa el radio de los enemigos */
+  /** Representa el radio de los enemigos */
   private float radius;
 
-  //--------------------Zona de constructores---------------//
+  // --------------- Zona de constructores --------------- //
 
-  /* Constructor parametrizado y por defecto */
+  /** Constructor */
   public Enemy(PVector position, PVector velocity) {
     this.sprites = requestImage("resources/images/SlimeEnemy.png");
     this.position = position;
@@ -22,9 +22,9 @@ class Enemy extends FrameObject {
     this.radius = 25;
   }
 
-  //-------------------Zona de Operaciones--------------//
+  // --------------- Zona de Operaciones --------------- //
 
-  /* Dibuja los enemigos */
+  /** Dibuja los enemigos */
   public void display() {
     PImage frame = sprites.get(this.positionFrameX, this.positionFrameY, this.widthFrame, this.heightFrame);
     frame.resize(50, 50); // Redimenciona los enemigos
@@ -37,7 +37,7 @@ class Enemy extends FrameObject {
     }
   }
 
-  /* Permite que el enemigo se mueva */
+  /** Permite que el enemigo se mueva */
   public void move() {
     position.add(velocity); // Funcion para añadir la velocidad a la posicion
     if (position.x > (width-140) || position.x < 12) {
@@ -45,16 +45,16 @@ class Enemy extends FrameObject {
     }
   }
 
-  //------------zona de métodos--------------((
+  // --------------- Zona de métodos --------------- //
 
-  // Velocidad
+  /* Velocidad */
   public void setVelocity(PVector velocity) {
     this.velocity = velocity;
   }
   public PVector getVelocity() {
     return this.velocity;
   }
-  // Radio
+  /* Radio */
   public void setRadius(float radius) {
     this.radius = radius;
   }

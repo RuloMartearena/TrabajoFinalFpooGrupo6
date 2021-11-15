@@ -1,20 +1,20 @@
-/* Crea un laberinto */
+/** Crea un laberinto */
 class Labyrinth {
 
   // ------- Zona de atributos ------- //
 
-  /* Representa las celdas a modo de array, tambien representa la relacion de asociacion con la clase Celda */
+  /** Representa las celdas a modo de array, tambien representa la relacion de asociacion con la clase Celda */
   private Cell[][] celdas;
-  /* Representa el ancho del laberinto */
+  /** Representa el ancho del laberinto */
   private int widthMaze;
-  /* Representa el alto del laberinto */
+  /** Representa el alto del laberinto */
   private int heightMaze;
-  /* Representa el color del laberinto */
+  /** Representa el color del laberinto */
   private color colorMaze;
 
   // ------- Zona de constructores ------- //
 
-  /* Constructor parametrizado y por defecto */
+  /** Constructor parametrizado y por defecto */
   public Labyrinth(int widthMaze, int heightMaze) {
     this.widthMaze = widthMaze;
     this.heightMaze = heightMaze;
@@ -31,7 +31,7 @@ class Labyrinth {
 
   // ------- Zona de operaciones ------- //
 
-  /* Dibuja un nuevo laberinto */
+  /** Dibuja un nuevo laberinto */
   public void resetLabyrinth() {
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
@@ -40,7 +40,7 @@ class Labyrinth {
     }
   }
 
-  /* Genera el laberinto con un AutoWalker*/
+  /** Genera el laberinto con un AutoWalker*/
   boolean moving(int x, int y, int prevX, int prevY) { // Los parametros son la posicion inicial y la posicion anterior
     if (x<0 || x>=this.widthMaze || y<0 || y>=this.heightMaze || celdas[x][y].visited==true) { // si la celda ya fue visitada
       // No puede moverse
@@ -93,7 +93,7 @@ class Labyrinth {
     }
   }
 
-  /* Dibuja el laberinto */
+  /** Dibuja el laberinto */
   public void display() {
     translate(50, 50); // deja un espacio entre los bordes del laberinto (modificable)
     for (int i = 0; i<widthMaze; i++) {
@@ -115,21 +115,21 @@ class Labyrinth {
 
   // ------- Zona de metodos ------- //
 
-  // Ancho del laberinto
+  /* Ancho del laberinto */
   public void setWidthMaze(int widthMaze) {
     this.widthMaze = widthMaze;
   }
   public int getWidthMaze() {
     return this.widthMaze;
   }
-  // Alto del laberinto
+  /* Alto del laberinto */
   public void setHeightMaze(int heightMaze) {
     this.heightMaze = heightMaze;
   }
   public int getHeightMaze() {
     return this.heightMaze;
   }
-  // Color del laberinto
+  /* Color del laberinto */
   public void setColorMaze(color colorMaze) {
     this.colorMaze = colorMaze;
   }
