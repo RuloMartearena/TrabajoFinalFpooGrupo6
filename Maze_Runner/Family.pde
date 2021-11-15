@@ -35,23 +35,13 @@ class Family extends GameObject {
   /* Detecta la colision entre objetos de tipo Famili y objetos de tipo Maincharacter */
   public void colision(MainCharacter personaje) {
     boolean isColliding = false; // Establece una variable booleana para detectar si existe colision
-    for(int i=0;i<family.length;i++){
+    for (int i=0; i<family.length; i++) {
       if (family[i].getPositionX() == personaje.getPositionX() && family[i].getPositionY() == personaje.getPositionY()) {
         family[i].setPositionX(72-i);
         family[i].setPositionY(-1);
         isColliding = true;
       }
     } 
-    //if (family[1].getPositionX() == personaje.getPositionX() && family[1].getPositionY() == personaje.getPositionY()) {
-    //  family[1].setPositionX(71);
-    //  family[1].setPositionY(-1);
-    //  isColliding = true;
-    //}
-    //if (family[2].getPositionX() == personaje.getPositionX() && family[2].getPositionY() == personaje.getPositionY()) {
-    //  family[2].setPositionX(70);
-    //  family[2].setPositionY(-1);
-    //  isColliding = true;
-    //}
     if (isColliding) {
       familyPoints++;
     }
