@@ -13,6 +13,8 @@ class MainCharacter extends GameObject {
   private float velocity;
   /* Representa los puntos del jugador */
   private int points;
+  
+  private int side;
 
   // ----------------- Zona de constructores ---------------- //
 
@@ -27,6 +29,7 @@ class MainCharacter extends GameObject {
     this.colorObject = (#EF7F1A); // (anaranjado)
     this.radius = radius;
     this.points = 1;
+    this.side = 10;
   }
 
   // -------------------- Zona de operaciones -------------- //
@@ -124,4 +127,21 @@ class MainCharacter extends GameObject {
   public int getPoints() {
     return this.points;
   }
+    public void setSide(int side) {
+    this.side = side; // Establece el valor del atributo
+  }
+  /* Retorna el valor del atributo radio */
+  public int getSide() {
+    return this.side;
+  }
+     public void setColorObject(color colorObject) {
+    this.colorObject = colorObject; // Establece el valor del atributo
+  }
+  /* Retorna el valor del atributo radio */
+  public int getColorObject() {
+    return this.colorObject;
+  }
+  
+  
+  
 }

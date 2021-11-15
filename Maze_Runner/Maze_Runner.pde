@@ -29,7 +29,7 @@ public void setup() {
   cat = new Cat(new PVector(-20, -30));
   // -- Enemigo -- //
   for (int i=0; i < enemies.length; i++) {
-    enemies [i] = new Enemy(new PVector(width/2, i*(height-20)/enemies.length), new PVector(random(1, 15), 0));
+    enemies [i] = new Enemy(width/2, (i*(height-20)/enemies.length),((int)random(1, 5)),20,40,40);
   }
   // -- Familiares --//
   for (int i=0; i<family.length; i++) {
@@ -60,6 +60,9 @@ public void draw() {
     for (int i=0; i< enemies.length; i++) {
       enemies[i].display();
       enemies[i].move();
+      enemies[i].colision(character);
+      
+      
     }
     // Estructura iterativa que dibuja a todos los familiares
     for (int i=0; i< family.length; i++) {
@@ -90,6 +93,12 @@ public void draw() {
       family[i].setPositionY((int)random(40));
     }
     // Falta restablecer las posiciones de los enemigos
+    for (int i=0; i<enemies.length; i++) {
+      enemies[i].setPositionX((int)random(100));
+      enemies[i].setPositionY((int)random(50));
+    
+    
+    }
     break;
   }
 }
