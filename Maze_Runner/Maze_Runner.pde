@@ -1,7 +1,7 @@
 /* ------ variables especiales para la musica ------ */
 import ddf.minim.*; // Importa la biblioteca minim
-Minim minim; // Crea una variable de tipo minim con nombre minim 
-AudioPlayer player; // Crea una variable de tipo AudioPlayer de nombre player
+private Minim minim; // Crea una variable de tipo minim con nombre minim 
+private AudioPlayer player; // Crea una variable de tipo AudioPlayer de nombre player
 
 /* ----------- Zona de variables ----------- */
 private int mode; // Variable del sketch para los menus de tipo entero y de nombre mode
