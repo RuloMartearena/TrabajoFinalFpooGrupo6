@@ -109,8 +109,10 @@ class Labyrinth {
     /* Lineas de relleno del laberinto - Lineas de abajo e izquierda del margen */
     stroke(this.colorMaze); // Color del laberinto (blanco)
     strokeWeight(3); // ancho de las lineas (no modificable / tiene que ser el mismo que el de arriba)
-    line(0, 0, 0, 15*this.heightMaze);
-    line(0, 15*this.heightMaze, 15*this.widthMaze, 15*this.heightMaze);
+    line(0, 0, 0, 15*this.heightMaze); // Linea de relleno de abajo
+    line(0, 15*this.heightMaze, 15*this.widthMaze, 15*this.heightMaze); // Linea de relleno de la izquierda
+    line(15*this.widthMaze, 15*this.heightMaze, 15*this.widthMaze, 0); // Linea de relleno de la derecha
+    line(15*this.widthMaze, 0, 0, 0); // Linea de relleno de arriba
   }
 
   // ------- Zona de metodos ------- //

@@ -82,7 +82,15 @@ public void draw() {
 }
 // keyPressed para menus
 public void keyPressed() {
-  if (key == 'n') mode++; // Aumenta la variable para los menus en 1 cuando se presiona la tecla n
+  if (key == 'n' || key == 'N') {
+    mode++; // Aumenta la variable para los menus en 1 cuando se presiona la tecla n
+    for (int i = 0; i<70; i++) {
+      int x = floor(random(maze.widthMaze)); 
+      int y = floor(random(maze.heightMaze)); 
+      maze.celdas[x][y].rightWall = false;
+      maze.celdas[x][y].upWall = false;
+    }
+  }
   if (mode >= 4) { // Si la variable del menu es mayor a 4 su valor es 2, esto es para que se genere otro laberinto
     mode = 2;
   }
