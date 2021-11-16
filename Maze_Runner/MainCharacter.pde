@@ -41,6 +41,7 @@ class MainCharacter extends GameObject {
   /** Cuenta y aumenta los puntos */
   public void collectPoints() {
     fill(#AFADAD); // color de las letras (gris oscuro | el mismo que el del laberinto y las celdas)
+    textSize(15);
     text(Constants.POINTS_PLAYER+this.points, -1, -17); // mensaje
     maze.celdas[0][0].ball = false;//no aparecera la primera bolita para que el jugador empieze con 0 puntos
     if (character.positionX == character.nextPositionX && character.positionY == character.nextPositionY) {     

@@ -30,7 +30,7 @@ class Enemy extends GameObject {
 
 
   /** Detecta la colision entre objetos de tipo Enemy y objetos de tipo Maincharacter */
-  public void colision(MainCharacter personaje) {
+  public boolean colision(MainCharacter personaje) {
     boolean isColliding = false; // Establece una variable booleana para detectar si existe colision
     for (int i=0; i<enemy.length; i++) {
       if (enemy[i].getPositionX() == personaje.getPositionX() && enemy[i].getPositionY() == personaje.getPositionY()) {
@@ -39,10 +39,7 @@ class Enemy extends GameObject {
         isColliding = true;
       }
     }
-    if (isColliding) {
-      character.setColorObject(0);
-      character.setVelocity(0);
-    }
+    return isColliding;
   }
 
   public void move(int x, int y) {
