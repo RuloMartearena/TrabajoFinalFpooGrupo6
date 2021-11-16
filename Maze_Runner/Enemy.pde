@@ -1,8 +1,11 @@
-/** Clase que representa las ellipses que a la vez representa a los enemigos del jugador que debe rescatar */
+/** Clase que representa los Square que a la vez representa a los enemigos del jugador que debe evadir */
 class Enemy extends GameObject {
 
   // ------------------ Zona de atributos ----------------- //
+  
+  /** Representa los lados que tiene Enemy */
   private int side;
+  /** Representa la velocidad con la que se mueve Enemy */
   private float velocity;
   // ------------------ Zona de constructores ----------------- //
 
@@ -66,4 +69,24 @@ class Enemy extends GameObject {
 
 
   // ------------------ Zona de metodos ------------------ //
+  
+  /* Cambia el valor de los lados del Enemy */
+  public void setSide (int side) {
+    this.side = side; // Establece el valor de los lados
+  }
+  
+  /* Retorna el valor de los lados */
+   public int getSide() {
+    return this.side;
+  }
+  
+  /* Cambia el valor de la velocidad del Enemy */
+  public void setVelocity (float velocity){
+    this.velocity = velocity; // Establece el valor de la velocidad
+  }
+  
+  /* Retorna el valor de los lados */
+  public float getVelocity(){
+    return this.velocity;
+  }
 }
