@@ -21,7 +21,7 @@ class Enemy extends GameObject {
   public void display() {
     noStroke(); // saca los bordes a la forma
     fill(this.colorObject);// color 
-    square(this.positionX*15+4, this.positionY*15+4, this.side);
+    square(this.positionX*15+4, this.positionY*15+4, this.side*2);
   }
 
 
@@ -42,17 +42,27 @@ class Enemy extends GameObject {
     }
   }
 
-  public void move() {
+  public void move(int x, int y) {
 
 //FALTA DEFINIR MOV Y AGREGAR POLIMORFISMO A LA OPERACION//
-    positionX = positionX + velocity;
-    if (positionX > (width-120)) {
-      velocity = velocity*(-1);
+    if(x==1){
+      positionX = positionX + velocity;
+      if (positionX > 68) {
+        velocity = velocity-1;
+      }
+      if ( positionX < 5) {
+        velocity = velocity+1;
+      }
     }
-    if ( positionX == (width-120)) {
-      velocity = velocity-1;
-    } else {
-      velocity=1;
+
+    if(y==1){
+      positionY = positionY + velocity;
+      if (positionY > 35) {
+        velocity = velocity-1;
+      }
+      if ( positionY < 5) {
+        velocity = velocity+1;
+      }
     }
   }
 

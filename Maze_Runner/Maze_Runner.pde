@@ -9,8 +9,8 @@ private MainCharacter character; // Variable del Jugador
 private Labyrinth maze; // Variable del  Laberinto
 private Menus menus; // Variable del  Menus
 private Cat cat; // Variable del Gato
-private Family []family = new Family[3]; // Variable tipo array de los Familiares
-private Enemy []enemy = new Enemy[10]; // Variable tipo array de los Familiares
+private Family []family = new Family[4]; // Variable tipo array de los Familiares
+private Enemy []enemy = new Enemy[8]; // Variable tipo array de los Familiares
 
 /* ---------- Configuración inicial -------------- */
 public void setup() {
@@ -29,11 +29,11 @@ public void setup() {
   cat = new Cat(new PVector(-20, -30)); // (posX, posY)
   // Familiares
   for (int i=0; i<family.length; i++) {
-    family[i] = new Family((int)random(73), (int)random(40), 5); // (posX, posY, radio)
+    family[i] = new Family((int)random(10,73), (int)random(10,40), 5); // (posX, posY, radio)
   }
   // Enemigos
   for (int i=0; i<enemy.length; i++) {
-    enemy[i] = new Enemy((int)random(73), (int)random(40), 9, 0);//(int) random(12)); // (posX, posY, lado,velocidad)
+    enemy[i] = new Enemy((int)random(5,65), (int)random(5,35), 5, 1);//(int) random(12)); // (posX, posY, lado,velocidad)
   }
 }
 /* ---------- Invocación de metodos ------------ */
@@ -59,7 +59,13 @@ public void draw() {
     for (int i=0; i< enemy.length; i++) {
       enemy[i].display();
       enemy[i].colision(character);
-      enemy[i].move();
+      if(i<=3){
+        enemy[i].move(1,0);
+      }
+      if(i>=4){
+        enemy[i].move(0,1);
+      }
+      
     }
 
     // Estructura iterativa que dibuja a todos los familiares
