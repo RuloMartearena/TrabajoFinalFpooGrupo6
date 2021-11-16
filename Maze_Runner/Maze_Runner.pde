@@ -29,11 +29,11 @@ public void setup() {
   cat = new Cat(new PVector(-20, -30)); // (posX, posY)
   // Familiares
   for (int i=0; i<family.length; i++) {
-    family[i] = new Family((int)random(10,73), (int)random(10,40), 5); // (posX, posY, radio)
+    family[i] = new Family((int)random(10, 73), (int)random(10, 40), 5); // (posX, posY, radio)
   }
   // Enemigos
   for (int i=0; i<enemy.length; i++) {
-    enemy[i] = new Enemy((int)random(5,65), (int)random(5,35), 5, 1);//(int) random(12)); // (posX, posY, lado,velocidad)
+    enemy[i] = new Enemy((int)random(5, 65), (int)random(5, 35), 5, 1);//(int) random(12)); // (posX, posY, lado,velocidad)
   }
 }
 /* ---------- Invocación de metodos ------------ */
@@ -56,19 +56,19 @@ public void draw() {
     character.display(); // dibujo del jugador
     cat.display(); // dibujo del gato
     cat.move(); // movimiento del gato
+    // Estructura iterativa para los enemigos
     for (int i=0; i< enemy.length; i++) {
       enemy[i].display();
       boolean colisionConCharacter = enemy[i].colision(character);
-      if(i<=5){
-        enemy[i].move(1,0);
+      if (i<=5) {
+        enemy[i].move(1, 0);
       }
-      if(i>=6){
-        enemy[i].move(0,1);
+      if (i>=6) {
+        enemy[i].move(0, 1);
       }
-      if(colisionConCharacter){
+      if (colisionConCharacter) {
         mode = 3;
       }
-      
     }
     // Estructura iterativa que dibuja a todos los familiares
     for (int i=0; i< family.length; i++) {
@@ -82,25 +82,25 @@ public void draw() {
     }  
     break;
   case 3:
-      menus.displayInstruccion(); // Instrucciones para seguir jugando
-      maze.resetLabyrinth(); // resetea el laberinto
-      maze.moving(0, 0, 0, 0); // genera otro laberinto
-      // reposiciona al jugador
-      character.setPositionX(0);
-      character.setPositionY(0);
-      character.setNextPositionX(0);
-      character.setNextPositionY(0);
-      character.setPoints(0); // Reinicia los puntos del jugador en 0
-      // Reposiciona a la familiar 
-      for (int i=0; i<family.length; i++) {
-        family[i].setPositionX((int)random(10,73));
-        family[i].setPositionY((int)random(10,40));
-      }
-      // Reposiciona a la enemigo
-      for (int i=0; i<enemy.length; i++) {
-        enemy[i].setPositionX((int)random(5,65));
-        enemy[i].setPositionY((int)random(5,35));
-      } 
+    menus.displayInstruccion(); // Instrucciones para seguir jugando
+    maze.resetLabyrinth(); // resetea el laberinto
+    maze.moving(0, 0, 0, 0); // genera otro laberinto
+    // reposiciona al jugador
+    character.setPositionX(0);
+    character.setPositionY(0);
+    character.setNextPositionX(0);
+    character.setNextPositionY(0);
+    character.setPoints(0); // Reinicia los puntos del jugador en 0
+    // Reposiciona a la familiar 
+    for (int i=0; i<family.length; i++) {
+      family[i].setPositionX((int)random(10, 73));
+      family[i].setPositionY((int)random(10, 40));
+    }
+    // Reposiciona a la enemigo
+    for (int i=0; i<enemy.length; i++) {
+      enemy[i].setPositionX((int)random(5, 65));
+      enemy[i].setPositionY((int)random(5, 35));
+    } 
     break;
   }
 }

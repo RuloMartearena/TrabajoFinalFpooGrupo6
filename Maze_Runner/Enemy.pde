@@ -2,11 +2,12 @@
 class Enemy extends GameObject {
 
   // ------------------ Zona de atributos ----------------- //
-  
+
   /** Representa los lados que tiene Enemy */
   private int side;
   /** Representa la velocidad con la que se mueve Enemy */
   private float velocity;
+
   // ------------------ Zona de constructores ----------------- //
 
   /** Constructor */
@@ -27,8 +28,6 @@ class Enemy extends GameObject {
     square(this.positionX*15+4, this.positionY*15+4, this.side*2);
   }
 
-
-
   /** Detecta la colision entre objetos de tipo Enemy y objetos de tipo Maincharacter */
   public boolean colision(MainCharacter personaje) {
     boolean isColliding = false; // Establece una variable booleana para detectar si existe colision
@@ -42,10 +41,10 @@ class Enemy extends GameObject {
     return isColliding;
   }
 
+  /** Mueve a los enemigos */
   public void move(int x, int y) {
-
-//FALTA DEFINIR MOV Y AGREGAR POLIMORFISMO A LA OPERACION//
-    if(x==1){
+    //FALTA DEFINIR MOV Y AGREGAR POLIMORFISMO A LA OPERACION//
+    if (x==1) {
       positionX = positionX + velocity;
       if (positionX > 68) {
         velocity = velocity-1;
@@ -55,7 +54,7 @@ class Enemy extends GameObject {
       }
     }
 
-    if(y==1){
+    if (y==1) {
       positionY = positionY + velocity;
       if (positionY > 35) {
         velocity = velocity-1;
@@ -66,27 +65,22 @@ class Enemy extends GameObject {
     }
   }
 
-
-
   // ------------------ Zona de metodos ------------------ //
-  
+
   /** Cambia el valor de los lados del Enemy */
   public void setSide (int side) {
     this.side = side; // Establece el valor de los lados
   }
-  
   /** Retorna el valor de los lados */
-   public int getSide() {
+  public int getSide() {
     return this.side;
   }
-  
   /** Cambia el valor de la velocidad del Enemy */
-  public void setVelocity (float velocity){
+  public void setVelocity (float velocity) {
     this.velocity = velocity; // Establece el valor de la velocidad
   }
-  
   /** Retorna el valor de los lados */
-  public float getVelocity(){
+  public float getVelocity() {
     return this.velocity;
   }
 }
