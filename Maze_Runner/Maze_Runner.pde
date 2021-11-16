@@ -10,6 +10,7 @@ private Labyrinth maze; // Variable del  Laberinto
 private Menus menus; // Variable del  Menus
 private Cat cat; // Variable del Gato
 private Family []family = new Family[3]; // Variable tipo array de los Familiares
+private Enemy []enemy = new Enemy[10]; // Variable tipo array de los Familiares
 
 /* ---------- Configuración inicial -------------- */
 public void setup() {
@@ -29,6 +30,10 @@ public void setup() {
   // Familiares
   for (int i=0; i<family.length; i++) {
     family[i] = new Family((int)random(73), (int)random(40), 5); // (posX, posY, radio)
+  }
+  // Enemigos
+  for (int i=0; i<enemy.length; i++) {
+    enemy[i] = new Enemy((int)random(73), (int)random(40), 9, 0);//(int) random(12)); // (posX, posY, lado,velocidad)
   }
 }
 /* ---------- Invocación de metodos ------------ */
@@ -51,6 +56,12 @@ public void draw() {
     character.display(); // dibujo del jugador
     cat.display(); // dibujo del gato
     cat.move(); // movimiento del gato
+    for (int i=0; i< enemy.length; i++) {
+      enemy[i].display();
+      enemy[i].colision(character);
+      enemy[i].move();
+    }
+
     // Estructura iterativa que dibuja a todos los familiares
     for (int i=0; i< family.length; i++) {
       family[i].familyPoints();
@@ -60,7 +71,7 @@ public void draw() {
       if (family[i].getFamilyPoints() == 1 && character.getPoints() == 2920) {  
         menus.displayWin(); // mensaje de que se gano el juego
       }
-    }
+    }  
     break;
   case 3:
     menus.displayInstruccion(); // Instrucciones para seguir jugando
@@ -76,6 +87,11 @@ public void draw() {
     for (int i=0; i<family.length; i++) {
       family[i].setPositionX((int)random(73));
       family[i].setPositionY((int)random(40));
+    }
+    // Reposiciona a la enemigo
+    for (int i=0; i<enemy.length; i++) {
+      enemy[i].setPositionX((int)random(73));
+      enemy[i].setPositionY((int)random(40));
     }
     break;
   }

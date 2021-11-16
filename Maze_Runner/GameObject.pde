@@ -11,6 +11,7 @@ abstract class GameObject {
   protected color colorObject;
   /** Representa el radio de los objetos */
   protected Integer radius;
+  
 
   // ----------------- Zona de constructores ---------------- //
 
