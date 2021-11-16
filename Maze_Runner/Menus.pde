@@ -62,7 +62,7 @@ class Menus extends FrameObject {
     textSize(50);
     text(Constants.WIN, 30, height/3); // texto que indica que se gano el juego
     textSize(15);
-    text(Constants.INSTRUCTION_WIN, width/2-140, height-80);
+    text(Constants.INSTRUCTION_DEAD_OR_WIN, width/2-140, height-80);
     imageMode(CENTER); //imagen del marcianitooooo
     image(gif[f], width/2, height/2, this.widthFrame, this.heightFrame); // posicion del gif o cantidad de frames
     f = f + 1;
@@ -73,8 +73,13 @@ class Menus extends FrameObject {
 
   /** Muentra las instrucciones a seguir cuando se gano el juego */
   public void displayInstruccion() {
+    imageMode(CENTER);
+    this.fondo = loadImage("resources/images/perdiste.png");
+    image(fondo, width/2, height/2, 500, 500);
     textSize(15);
-    text(Constants.INSTRUCTION_WIN, width/2-140, height-80);
+    text(Constants.INSTRUCTION_DEAD_OR_WIN, width/2-140, height-80);
+    textSize(70);
+    text(Constants.INSTRUCTION_DEAD, 300, 80);
   }
 
   // -------------------- Zona de metodos --------------- //
