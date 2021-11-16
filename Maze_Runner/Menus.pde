@@ -57,7 +57,7 @@ class Menus extends FrameObject {
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 
-  /** Muentra el mensaje cuando ganas */
+  /** Muestra el mensaje cuando ganas */
   public void displayWin() {
     textSize(50);
     text(Constants.WIN, 30, height/3); // texto que indica que se gano el juego
@@ -71,7 +71,7 @@ class Menus extends FrameObject {
     this.heightFrame = 190;
   }
 
-  /** Muentra las instrucciones a seguir cuando se gano el juego */
+  /** Muestra las instrucciones a seguir cuando se pierde */
   public void displayInstruccion() {
     imageMode(CENTER);
     this.fondo = loadImage("resources/images/perdiste.png");
