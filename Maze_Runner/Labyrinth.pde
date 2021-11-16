@@ -117,24 +117,27 @@ class Labyrinth {
 
   // ------- Zona de metodos ------- //
 
-  /* Ancho del laberinto */
+  /** Cambia el valor de widthMaze */
   public void setWidthMaze(int widthMaze) {
-    this.widthMaze = widthMaze;
+    this.widthMaze = widthMaze; // Establece el valor de widthMaze
   }
+  /** Retorna el valor de widthMaze */
   public int getWidthMaze() {
     return this.widthMaze;
   }
-  /* Alto del laberinto */
+  /** Cambia el valor de heightMaze */
   public void setHeightMaze(int heightMaze) {
-    this.heightMaze = heightMaze;
+    this.heightMaze = heightMaze; // Establece el valor de heightMaze
   }
+  /** Retorna el valor de HeightMaze */
   public int getHeightMaze() {
     return this.heightMaze;
   }
-  /* Color del laberinto */
+  /** Cambia el valor de colorMaze */
   public void setColorMaze(color colorMaze) {
-    this.colorMaze = colorMaze;
+    this.colorMaze = colorMaze; // Establece el valor de colorMaze
   }
+  /** Retorna el valor de colorMaze */
   public color getColorMaze() {
     return this.colorMaze;
   }

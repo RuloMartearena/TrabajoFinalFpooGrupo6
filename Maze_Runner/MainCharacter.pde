@@ -41,7 +41,8 @@ class MainCharacter extends GameObject {
   /** Cuenta y aumenta los puntos */
   public void collectPoints() {
     fill(#AFADAD); // color de las letras (gris oscuro | el mismo que el del laberinto y las celdas)
-    text(Constants.POINTS_PLAYER+this.points, -1, -10); // mensaje
+    textSize(15);
+    text(Constants.POINTS_PLAYER+this.points, -1, -17); // mensaje
     maze.celdas[0][0].ball = false;//no aparecera la primera bolita para que el jugador empieze con 0 puntos
     if (character.positionX == character.nextPositionX && character.positionY == character.nextPositionY) {     
       if (maze.celdas[character.nextPositionX][character.nextPositionY].ball == true) {
@@ -91,36 +92,35 @@ class MainCharacter extends GameObject {
 
   // -------------------- Zona de metodos --------------- //
 
-  // Siguiente posicion en X
-  /* Cambia el valor de la siguiente posicion del objeto */
+  /** Cambia el valor de la siguiente posicion en X de MainChatacter */
   public void setNextPositionX (int nextPositionX) {
-    this.nextPositionX = nextPositionX; // Establece el valor del objeto
+    this.nextPositionX = nextPositionX; // Establece el valor de la siguiente posicion en X
   }
-  /* Retorna el valor del objeto */
+  /** Retorna el valor de la siguiente posicion en X */
   public int getNextPositionX() {
     return this.nextPositionX;
   }
-  // Siguiente posicion en Y
-  /* Cambia el valor de la siguiente posicion del objeto */
+  /** Cambia el valor de la siguiente posicion en Y de MainChatacter */
   public void setNextPositionY (int nextPositionY) {
-    this.nextPositionY = nextPositionY; // Establece el valor del objeto
+    this.nextPositionY = nextPositionY; // Establece el valor de la siguiente posicion en Y
   }
-  /* Retorna el valor del objeto */
+  /** Retorna el valor de la siguiente posicion en Y */
   public int getNextPositionY() {
     return this.nextPositionY;
   }
-  // Velocidad
-  /* Cambia el valor de la velocidad del objeto */
+  /** Cambia el valor de la velocidad de MainCharacter */
   public void setVelocity (float velocity) {
-    this.velocity = velocity;
+    this.velocity = velocity; // Establece el valor de la velocidad
   }
+  /** Retorna el valor de la velocidad */
   public float getVelocity() {
     return this.velocity;
   }
-  // Puntos
+  /** Cambia el valor de los puntos de MainCharacter */
   public void setPoints(int points) {
-    this.points = points;
+    this.points = points; // Establece el valor de los puntos.
   }
+  /** Retorna el valor de la puntos */
   public int getPoints() {
     return this.points;
   }

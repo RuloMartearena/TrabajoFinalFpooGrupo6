@@ -76,10 +76,11 @@ class Cat extends FrameObject {
 
   // ------------ Zona de métodos -------------- //
 
-  /* Velocidad */
+  /** Cambia el valor de la velocidad de Cat */
   public void setVelocity(PVector velocity) {
-    this.velocity = velocity;
+    this.velocity = velocity; // Establece el valor de velocity
   }
+  /** Retorna el valor de la velocidad */
   public PVector getVelocity() {
     return this.velocity;
   }

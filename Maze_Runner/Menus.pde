@@ -57,12 +57,12 @@ class Menus extends FrameObject {
     text(Constants.INSTRUCTION, width/2-90, height-40);
   }
 
-  /** Muentra el mensaje cuando ganas */
+  /** Muestra el mensaje cuando ganas */
   public void displayWin() {
     textSize(50);
     text(Constants.WIN, 30, height/3); // texto que indica que se gano el juego
     textSize(15);
-    text(Constants.INSTRUCTION_WIN, width/2-140, height-80);
+    text(Constants.INSTRUCTION_DEAD_OR_WIN, width/2-140, height-80);
     imageMode(CENTER); //imagen del marcianitooooo
     image(gif[f], width/2, height/2, this.widthFrame, this.heightFrame); // posicion del gif o cantidad de frames
     f = f + 1;
@@ -71,46 +71,56 @@ class Menus extends FrameObject {
     this.heightFrame = 190;
   }
 
-  /** Muentra las instrucciones a seguir cuando se gano el juego */
+  /** Muestra las instrucciones a seguir cuando se pierde */
   public void displayInstruccion() {
+    imageMode(CENTER);
+    this.fondo = loadImage("resources/images/perdiste.png");
+    image(fondo, width/2, height/2, 500, 500);
     textSize(15);
-    text(Constants.INSTRUCTION_WIN, width/2-140, height-80);
+    text(Constants.INSTRUCTION_DEAD_OR_WIN, width/2-140, height-80);
+    textSize(70);
+    text(Constants.INSTRUCTION_DEAD, 300, 80);
   }
 
   // -------------------- Zona de metodos --------------- //
 
-  /* Fuente */
+  /** Cambia el valor de la fuente */
   public void setFuente(PFont fuente) {
-    this.fuente = fuente;
+    this.fuente = fuente; // Establece el valor de la fuente
   }
+   /** Retorna el valor de la fuente */
   public PFont getfuente() {
     return this.fuente;
   }
-  /* Fondo */
+  /** Cambia el valor del fondo */
   public void setFondo(PImage fondo) {
-    this.fondo = fondo;
+    this.fondo = fondo; // Establece el valor del fondo
   }
+  /** Retorna el valor del fondo */
   public PImage getFondo() {
     return this.fondo;
   }
-  /* fontColor */
+  /** Cambia el valor del color de la fuente */
   public void setFontColor(color fontColor) {
-    this.fontColor = fontColor;
+    this.fontColor = fontColor; // Establece el valor del color de la fuente
   }
+  /** Retorna el valor del color de la fuente */
   public color getFontColor() {
     return this.fontColor;
   }
-  /* Numero de frames */
+  /** Cambia el valor de los numeros de frames del marcianito (gif de Winner) */
   public void setNumberOfFrames(int numberOfFrames) {
-    this.numberOfFrames = numberOfFrames;
+    this.numberOfFrames = numberOfFrames; // Establece el valor de los numeros de frames
   }
+  /** Retorna el valor de los numeros de frames */
   public int getNumberOfFrames() {
     return this.numberOfFrames;
   }
-  /* f */
+  /** Cambia el valor de la variable f de marcianito (gif de Winner) */
   public void setF(int f) {
-    this.f = f;
+    this.f = f; // Establece el valor de f
   }
+  /** Retorna el valor de f */
   public int getF() {
     return this.f;
   }

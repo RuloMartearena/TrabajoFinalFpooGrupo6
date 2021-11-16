@@ -29,7 +29,7 @@ class Family extends GameObject {
   /** Muestra los puntos de los familiares */
   public void familyPoints() {
     fill(#AFADAD); // Color del texto
-    text("Familiares rescatados:", 850, -10);
+    text("Familiares rescatados:", 845, -17);
   }
 
   /** Detecta la colision entre objetos de tipo Famili y objetos de tipo Maincharacter */
@@ -38,7 +38,7 @@ class Family extends GameObject {
     for (int i=0; i<family.length; i++) {
       if (family[i].getPositionX() == personaje.getPositionX() && family[i].getPositionY() == personaje.getPositionY()) {
         family[i].setPositionX(72-i);
-        family[i].setPositionY(-1);
+        family[i].setPositionY(-2);
         isColliding = true;
       }
     } 
@@ -49,10 +49,12 @@ class Family extends GameObject {
 
   // ------------------ Zona de metodos ------------------ //
 
-  /* Puntos de familiares */
+  /** Puntos de familiares */
+  /** Cambia el valor de los puntos que dan Family */
   public void setFamilyPoints(int familyPoints) {
-    this.familyPoints = familyPoints;
+    this.familyPoints = familyPoints; // Establece el valor de los familyPoints
   }
+  /** Retorna el valor de familyPoints */
   public int getFamilyPoints() {
     return this.familyPoints;
   }
