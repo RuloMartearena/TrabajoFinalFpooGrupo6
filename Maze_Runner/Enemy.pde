@@ -73,22 +73,22 @@ class Enemy extends GameObject {
 
   // ------------------ Zona de metodos ------------------ //
   
-  /* Cambia el valor de los lados del Enemy */
+  /** Cambia el valor de los lados del Enemy */
   public void setSide (int side) {
     this.side = side; // Establece el valor de los lados
   }
   
-  /* Retorna el valor de los lados */
+  /** Retorna el valor de los lados */
    public int getSide() {
     return this.side;
   }
   
-  /* Cambia el valor de la velocidad del Enemy */
+  /** Cambia el valor de la velocidad del Enemy */
   public void setVelocity (float velocity){
     this.velocity = velocity; // Establece el valor de la velocidad
   }
   
-  /* Retorna el valor de los lados */
+  /** Retorna el valor de los lados */
   public float getVelocity(){
     return this.velocity;
   }

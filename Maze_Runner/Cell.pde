@@ -57,66 +57,80 @@ class Cell {
 
   // ---------- Zona de metodos ---------- //
 
-  /* Muros superiores */
+  /** Muros superiores */
+  /** Cambia el valor de los muros superiores */
   public void setUpWall(boolean upWall) {
-    this.upWall = upWall;
+    this.upWall = upWall; // Establece el valor de los muros superiores
   }
+  /** Retorna el valor de los muros superiores */
   public boolean getUpWall() {
     return this.upWall;
   }
-  /* Muros derechos */
+  /** Muros derechos */
+  /** Cambia el valor de los muros derechos */
   public void setRightWall(boolean rightWall) {
-    this.rightWall = rightWall;
+    this.rightWall = rightWall; // Establece el valor de los muros derechos
   }
+  /** Retorna el valor de los muros derechos */
   public boolean getRightWall() {
     return this.rightWall;
   }
-  /* Visitado? */
+  /** Visitado */
+  /** Cambia el valor de Visited */
   public void setVisited(boolean visited) {
-    this.visited = visited;
+    this.visited = visited; // Establece el valor de visited
   }
+  /** Retorna el valor de visited */
   public boolean getVisited() {
     return this.visited;
   }
-  /* Bolas */
+  /** Bolas */
+  /** Cambia el valor de ball */
   public void setBall(boolean ball) {
-    this.ball = ball;
+    this.ball = ball; // Establece el valor de ball
   }
+  /** Retorna el valor de ball */
   public boolean getBall() {
     return this.ball;
   }
-  /* Color de las bolas */
+  /** Color de las bolas */
+  /** Cambia el valor de colorBall */
   public void setColorBall(color colorBall) {
-    this.colorBall = colorBall;
+    this.colorBall = colorBall; // Establece el valor de colorBall
   }
+  /** Retorna el valor de colorBall */
   public color getColorBall() {
     return this.colorBall;
   }
-  /* Posicion en X de las bolas */
+  /** Cambia el valor de la posicion en X de Ball */
   public void setPosXBall(int posXBall) {
-    this.posXBall = posXBall;
+    this.posXBall = posXBall; // Establece el valor de posXBall
   }
+  /** Retorna el valor de la posicion X de Ball */
   public int getPosXBall() {
     return this.posXBall;
   }
-  /* Posicion en Y de las bolas */
+  /** Cambia el valor de la posicion en Y de Ball */
   public void setPosYBall(int posYBall) {
-    this.posYBall = posYBall;
+    this.posYBall = posYBall; // Establece el valor de posYBall
   }
+  /** Retorna el valor de la posicion en Y de Ball */
   public int getPosYBall() {
     return this.posYBall;
   }
-  /* Radio de las bolas */
+  /** Cambia el valor del radio de Ball */
   public void setRadiusBall(int radiusBall) {
-    this.radiusBall = radiusBall;
+    this.radiusBall = radiusBall; // Establece el valor de radiusBall
   }
+  /** Retorna el valor del radio de Ball */
   public int getRadiusBall() {
     return this.radiusBall;
   }
-  /* Color de las celdas */
+  /** Cambia el valor del color de las celdas */
   public void setColorCell(color colorCell) {
-    this.colorCell=colorCell;
+    this.colorCell=colorCell; // Establece el valor de colorCell
   }
+  /** Retorna el valor del color de las celdas */
   public color getColorCell() {
     return this.colorCell;
   }

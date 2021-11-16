@@ -79,38 +79,43 @@ class Menus extends FrameObject {
 
   // -------------------- Zona de metodos --------------- //
 
-  /* Fuente */
+  /** Cambia el valor de la fuente */
   public void setFuente(PFont fuente) {
-    this.fuente = fuente;
+    this.fuente = fuente; // Establece el valor de la fuente
   }
+   /** Retorna el valor de la fuente */
   public PFont getfuente() {
     return this.fuente;
   }
-  /* Fondo */
+  /** Cambia el valor del fondo */
   public void setFondo(PImage fondo) {
-    this.fondo = fondo;
+    this.fondo = fondo; // Establece el valor del fondo
   }
+  /** Retorna el valor del fondo */
   public PImage getFondo() {
     return this.fondo;
   }
-  /* fontColor */
+  /** Cambia el valor del color de la fuente */
   public void setFontColor(color fontColor) {
-    this.fontColor = fontColor;
+    this.fontColor = fontColor; // Establece el valor del color de la fuente
   }
+  /** Retorna el valor del color de la fuente */
   public color getFontColor() {
     return this.fontColor;
   }
-  /* Numero de frames */
+  /** Cambia el valor de los numeros de frames del marcianito (gif de Winner) */
   public void setNumberOfFrames(int numberOfFrames) {
-    this.numberOfFrames = numberOfFrames;
+    this.numberOfFrames = numberOfFrames; // Establece el valor de los numeros de frames
   }
+  /** Retorna el valor de los numeros de frames */
   public int getNumberOfFrames() {
     return this.numberOfFrames;
   }
-  /* f */
+  /** Cambia el valor de la variable f de marcianito (gif de Winner) */
   public void setF(int f) {
-    this.f = f;
+    this.f = f; // Establece el valor de f
   }
+  /** Retorna el valor de f */
   public int getF() {
     return this.f;
   }

@@ -49,10 +49,12 @@ class Family extends GameObject {
 
   // ------------------ Zona de metodos ------------------ //
 
-  /* Puntos de familiares */
+  /** Puntos de familiares */
+  /** Cambia el valor de los puntos que dan Family */
   public void setFamilyPoints(int familyPoints) {
-    this.familyPoints = familyPoints;
+    this.familyPoints = familyPoints; // Establece el valor de los familyPoints
   }
+  /** Retorna el valor de familyPoints */
   public int getFamilyPoints() {
     return this.familyPoints;
   }

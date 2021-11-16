@@ -37,74 +37,74 @@ class FrameObject {
   // ------------------ Zona de metodos ----------------- //
 
   // Posicion 
-  /* Cambia el valor del atributo posicion */
+  /** Cambia el valor del atributo posicion */
   public void setPosition (PVector position) {
     this.position = position; // Establece el valor del atributo
   }
-  /* Retorna el valor del atributo posicion */
+  /** Retorna el valor del atributo posicion */
   public PVector getPosition() {
     return this.position;
   }
   // Posicion en X
-  /* Cambia el valor del atributo posicion */
+  /** Cambia el valor del atributo posicion */
   public void setPositionX (int positionX) {
     this.positionX = positionX; // Establece el valor del atributo
   }
-  /* Retorna el valor del atributo posicion */
+  /** Retorna el valor del atributo posicion */
   public Integer getPositionX() {
     return this.positionX;
   }
   // Posicion en Y
-  /* Cambia el valor del atributo posicion */
+  /** Cambia el valor del atributo posicion */
   public void setPositionY (int positionY) {
     this.positionY = positionY; // Establece el valor del atributo
   }
-  /* Retorna el valor del atributo posicion */
+  /** Retorna el valor del atributo posicion */
   public Integer getPositionY() {
     return this.positionY;
   }
   // Posicion del frame en X
-  /* Cambia el valor del atributo posicion */
+  /** Cambia el valor del atributo posicion */
   public void setPositionFrameX(int positionFrameX) {
     this.positionFrameX = positionFrameX; // Establece el valor del atributo
   }
-  /* Retorna el valor del atributo posicion */
+  /** Retorna el valor del atributo posicion */
   public int getPositionFrameX() {
     return this.positionFrameX;
   }
   // Posicion del frame en Y
-  /* Cambia el valor del atributo posicion */
+  /** Cambia el valor del atributo posicion */
   public void setPositionFrameY(int positionFrameY) {
     this.positionFrameY = positionFrameY; // Establece el valor del atributo
   }
-  /* Retorna el valor del atributo posicion */
+  /** Retorna el valor del atributo posicion */
   public int getPositionFrameY() {
     return this.positionFrameY;
   }
   // Ancho del frame
-  /* Cambia el valor del atributo ancho frame */
+  /** Cambia el valor del atributo ancho frame */
   public void setWidthFrame(int widthFrame) {
     this.widthFrame = widthFrame; // Establece el valor del atributo
   }
-  /* Retorna el valor del atributo ancho frame */
+  /** Retorna el valor del atributo ancho frame */
   public int getWidthFrame() {
     return this.widthFrame;
   }
   // Alto del frame
-  /* Cambia el valor del atributo alto frame */
+  /** Cambia el valor del atributo alto frame */
   public void setHeightFrame(int heightFrame) {
     this.heightFrame = heightFrame; // Establece el valor del atributo
   }
-  /* Retorna el valor del atributo alto frame */
+  /** Retorna el valor del atributo alto frame */
   public int getHeightFrame() {
     return this.heightFrame;
   }
   // Sprites
-  /* Cambia el valor del atributo sprites */
+  /** Cambia el valor del atributo sprites */
   public void setSprites(PImage sprites) { 
     this.sprites = sprites; // Establece el valor del atributo
   }
-  /* Retorna el valor del atributo sprites */
+  /** Retorna el valor del atributo sprites */
   public PImage getSprites() {
     return this.sprites;
   }
