@@ -10,7 +10,7 @@ private Labyrinth maze; // Variable del  Laberinto
 private Menus menus; // Variable del  Menus
 private Cat cat; // Variable del Gato
 private Family []family = new Family[3]; // Variable tipo array de los Familiares
-private Enemy []enemy = new Enemy[3]; // Variable tipo array de los Familiares
+private Enemy []enemy = new Enemy[10]; // Variable tipo array de los Familiares
 
 /* ---------- Configuración inicial -------------- */
 public void setup() {
@@ -32,8 +32,8 @@ public void setup() {
     family[i] = new Family((int)random(73), (int)random(40), 5); // (posX, posY, radio)
   }
   // Enemigos
-  for (int i=0; i<family.length; i++) {
-    enemy[i] = new Enemy((int)random(73), (int)random(40), 5, (int) random(12)); // (posX, posY, radio)
+  for (int i=0; i<enemy.length; i++) {
+    enemy[i] = new Enemy((int)random(73), (int)random(40), 9, 0);//(int) random(12)); // (posX, posY, lado,velocidad)
   }
 }
 /* ---------- Invocación de metodos ------------ */
@@ -59,7 +59,7 @@ public void draw() {
     for (int i=0; i< enemy.length; i++) {
       enemy[i].display();
       enemy[i].colision(character);
-     // enemy[i].move();
+      enemy[i].move();
     }
 
     // Estructura iterativa que dibuja a todos los familiares
@@ -90,8 +90,8 @@ public void draw() {
     }
     // Reposiciona a la enemigo
     for (int i=0; i<enemy.length; i++) {
-      enemy[i].setPositionX((int)random(100));
-      enemy[i].setPositionY((int)random(50));
+      enemy[i].setPositionX((int)random(73));
+      enemy[i].setPositionY((int)random(40));
     }
     break;
   }

@@ -3,21 +3,16 @@ class Enemy extends GameObject {
 
   // ------------------ Zona de atributos ----------------- //
   private int side;
-  private float velocityX;
-private float velocityY;
+  private float velocity;
   // ------------------ Zona de constructores ----------------- //
 
   /** Constructor */
-  public Enemy(int positionX, int positionY, int radius, int velocityX) {
+  public Enemy(int positionX, int positionY, int side, int velocity) {
     this.positionX = positionX;
     this.positionY = positionY;
-    this.colorObject = color(255,255,0);
-    this.side = side;
-    this.radius=radius;
-    this.velocityX=velocityX;
-    this.velocityY=velocityY;
-    
-    
+    this.colorObject =#FFFFB4;
+    this.side = side;   
+    this.velocity=velocity;
   }
 
   // ------------------ Zona de operaciones ----------------- //
@@ -26,8 +21,7 @@ private float velocityY;
   public void display() {
     noStroke(); // saca los bordes a la forma
     fill(this.colorObject);// color 
-
-    square(this.positionX*15+8, this.positionY*15+8, this.radius*2);
+    square(this.positionX*15+4, this.positionY*15+4, this.side);
   }
 
 
@@ -45,22 +39,24 @@ private float velocityY;
     if (isColliding) {
       character.setColorObject(0);
       character.setVelocity(0);
-      
     }
   }
-  
- /* public void move(){
-   if 
-   }
-  }*/
-  
-  
-  
-  
-  
+
+  public void move() {
+
+//FALTA DEFINIR MOV Y AGREGAR POLIMORFISMO A LA OPERACION//
+    positionX = positionX + velocity;
+    if (positionX > (width-120)) {
+      velocity = velocity*(-1);
+    }
+    if ( positionX == (width-120)) {
+      velocity = velocity-1;
+    } else {
+      velocity=1;
+    }
+  }
+
+
+
   // ------------------ Zona de metodos ------------------ //
-
- 
-
-
 }
