@@ -34,7 +34,7 @@ class MainCharacter extends GameObject {
   /** Dibuja un personaje */
   public void display() {
     noStroke(); // saca los bordes a la forma
-    fill(this.colorObject); // color del personaje (rosa)
+    fill(this.colorObject); // color del personaje
     circle(this.positionX*15+8, this.positionY*15+8, this.radius*2); // dibuja un circulo que representa al personaje principal
   }
 

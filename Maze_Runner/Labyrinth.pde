@@ -3,7 +3,7 @@ class Labyrinth {
 
   // ------- Zona de atributos ------- //
 
-  /** Representa las celdas a modo de array, tambien representa la relacion de asociacion con la clase Celda */
+  /** Representa las celdas a modo de array, tambien representa la relación de asociación con la clase Celda */
   private Cell[][] celdas;
   /** Representa el ancho del laberinto */
   private int widthMaze;
@@ -21,7 +21,7 @@ class Labyrinth {
     this.colorMaze = (#AFADAD); // (gris oscuro)
     /* Array de celdas */
     celdas = new Cell[widthMaze][heightMaze];
-    resetLabyrinth(); // Dibuja otro patron para el laberinto que es lo mismo a dibujar un laberinto diferente
+    resetLabyrinth(); // Dibuja otro patrón para el laberinto que es lo mismo a dibujar un laberinto diferente
     for (int i = 0; i<widthMaze; i++) {
       for (int j = 0; j<heightMaze; j++) {
         celdas[i][j] = new Cell();
@@ -41,7 +41,7 @@ class Labyrinth {
   }
 
   /** Genera el laberinto con un AutoWalker*/
-  boolean moving(int x, int y, int prevX, int prevY) { // Los parametros son la posicion inicial y la posicion anterior
+  boolean moving(int x, int y, int prevX, int prevY) { // Los parámetros son la posicion inicial y la posición anterior
     if (x<0 || x>=this.widthMaze || y<0 || y>=this.heightMaze || celdas[x][y].visited==true) { // si la celda ya fue visitada
       // No puede moverse
       return false;
@@ -71,14 +71,14 @@ class Labyrinth {
       // Desordenar las direcciones aleatoriamente
       for (int mezcla = 0; mezcla<10; mezcla++) {
         // intercambio una direccion random con la siguiente
-        int numero = floor(random(3)); // 0, 1, 2 Variable para genera un numero aleatorio
+        int numero = floor(random(3)); // 0, 1, 2 Variable para genera un número aleatorio
         // swap
         Vector tmp;
         tmp = dirs[numero]; // tmp <- dirs[1]
         dirs[numero] = dirs[numero+1]; // dirs[1] <-- dirs[2]
         dirs[numero+1] = tmp; // dirs[2] <--- tmp
       }
-      // Mueve en esa direccion
+      // Mueve en esa dirección
       /* Recursividad */
       // Backtraking
       if (
@@ -103,16 +103,16 @@ class Labyrinth {
         pushMatrix();
         translate(i*15, j*15); // mueve la coordenada en 15 pixeles en el eje X e Y
         celdas[i][j].display();
-        popMatrix(); // desace el translate
+        popMatrix(); // deshace el translate
       }
     }
-    /* Lineas de relleno del laberinto - Lineas de abajo e izquierda del margen */
+    /* Lineas de relleno del laberinto - Líneas de abajo e izquierda del márgen */
     stroke(this.colorMaze); // Color del laberinto (blanco)
-    strokeWeight(3); // ancho de las lineas (no modificable / tiene que ser el mismo que el de arriba)
-    line(0, 0, 0, 15*this.heightMaze); // Linea de relleno de abajo
-    line(0, 15*this.heightMaze, 15*this.widthMaze, 15*this.heightMaze); // Linea de relleno de la izquierda
-    line(15*this.widthMaze, 15*this.heightMaze, 15*this.widthMaze, 0); // Linea de relleno de la derecha
-    line(15*this.widthMaze, 0, 0, 0); // Linea de relleno de arriba
+    strokeWeight(3); // ancho de las líneas (no modificable / tiene que ser el mismo que el de arriba)
+    line(0, 0, 0, 15*this.heightMaze); // Línea de relleno de abajo
+    line(0, 15*this.heightMaze, 15*this.widthMaze, 15*this.heightMaze); // Línea de relleno de la izquierda
+    line(15*this.widthMaze, 15*this.heightMaze, 15*this.widthMaze, 0); // Línea de relleno de la derecha
+    line(15*this.widthMaze, 0, 0, 0); // Línea de relleno de arriba
   }
 
   // ------- Zona de metodos ------- //

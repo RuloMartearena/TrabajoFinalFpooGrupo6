@@ -49,9 +49,9 @@ class Cell {
       line(15, 0, 15, 15); // dibuja lineas
     }
     if (ball) {
-      noStroke(); // Saca los bordes a las ellipses
-      fill(this.colorBall); // Da color a las ellipses (verde oscuro)
-      ellipse(this.posXBall, this.posYBall, this.radiusBall, this.radiusBall); // Dibuja una ellipse
+      noStroke(); // Saca los bordes a las elipses
+      fill(this.colorBall); // Da color a las elipses (verde oscuro)
+      ellipse(this.posXBall, this.posYBall, this.radiusBall, this.radiusBall); // Dibuja una elipse
     }
   }
 

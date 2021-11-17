@@ -22,7 +22,7 @@ class FrameObject {
 
   // ------------------ Zona de constructores ----------------- //
 
-  /** Constructor en blanco */
+  /** Constructor por defecto */
   public FrameObject() {
   }
 

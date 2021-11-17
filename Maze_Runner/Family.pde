@@ -8,11 +8,11 @@ class Family extends GameObject {
 
   // ------------------ Zona de constructores ----------------- //
 
-  /** Constructor */
+  /** Constructor parametrizado*/
   public Family(int positionX, int positionY, int radius) {
     this.positionX = positionX;
     this.positionY = positionY;
-    this.colorObject = 225;//#7B236D; //morado
+    this.colorObject = 225; // color blanco
     this.radius = radius;
     this.familyPoints = 0;
   }
@@ -22,7 +22,7 @@ class Family extends GameObject {
   /** Dibuja un objeto de tipo Family */
   public void display() {
     noStroke(); // saca los bordes a la forma
-    fill(this.colorObject); // color del family (purpura)
+    fill(this.colorObject); // color del family
     circle(this.positionX*15+8, this.positionY*15+8, this.radius*2);
   }
 

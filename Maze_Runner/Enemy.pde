@@ -14,7 +14,7 @@ class Enemy extends GameObject {
   public Enemy(int positionX, int positionY, int side, int velocity) {
     this.positionX = positionX;
     this.positionY = positionY;
-    this.colorObject =#EDEA26;
+    this.colorObject =#EDEA26; //color amarillo claro
     this.side = side;   
     this.velocity=velocity;
     
