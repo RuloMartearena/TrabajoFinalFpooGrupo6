@@ -79,7 +79,7 @@ class Menus extends FrameObject {
     textSize(15);
     text(Constants.INSTRUCTION_DEAD_OR_WIN, width/2-140, height-80);
     textSize(70);
-    text(Constants.INSTRUCTION_DEAD, 300, 80);
+    text(Constants.DEAD, 300, 80);
   }
 
   // -------------------- Zona de metodos --------------- //

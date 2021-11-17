@@ -14,9 +14,10 @@ class Enemy extends GameObject {
   public Enemy(int positionX, int positionY, int side, int velocity) {
     this.positionX = positionX;
     this.positionY = positionY;
-    this.colorObject =#FFFFB4;
+    this.colorObject =#EDEA26;
     this.side = side;   
     this.velocity=velocity;
+    
   }
 
   // ------------------ Zona de operaciones ----------------- //
@@ -24,7 +25,7 @@ class Enemy extends GameObject {
   /** Dibuja un objeto de tipo Enemy */
   public void display() {
     noStroke(); // saca los bordes a la forma
-    fill(this.colorObject);// color 
+    fill(this.colorObject);// color
     square(this.positionX*15+4, this.positionY*15+4, this.side*2);
   }
 
@@ -43,7 +44,6 @@ class Enemy extends GameObject {
 
   /** Mueve a los enemigos */
   public void move(int x, int y) {
-    //FALTA DEFINIR MOV Y AGREGAR POLIMORFISMO A LA OPERACION//
     if (x==1) {
       positionX = positionX + velocity;
       if (positionX > 68) {
@@ -53,7 +53,7 @@ class Enemy extends GameObject {
         velocity = velocity+1;
       }
     }
-
+    
     if (y==1) {
       positionY = positionY + velocity;
       if (positionY > 35) {
