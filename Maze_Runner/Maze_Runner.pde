@@ -4,13 +4,13 @@ private Minim minim; // Crea una variable de tipo minim con nombre minim
 private AudioPlayer player; // Crea una variable de tipo AudioPlayer de nombre player
 
 /* ----------- Zona de variables ----------- */
-private int mode; // Variable del sketch para los menus de tipo entero y de nombre mode
+private int mode; // Variable del sketch para los menus 
 private MainCharacter character; // Variable del Jugador
 private Labyrinth maze; // Variable del  Laberinto
-private Menus menus; // Variable del  Menus
+private Menus menus; // Variable de los  Menus
 private Cat cat; // Variable del Gato
 private Family []family = new Family[4]; // Variable tipo array de los Familiares
-private Enemy []enemy = new Enemy[12]; // Variable tipo array de los Familiares
+private Enemy []enemy = new Enemy[12]; // Variable tipo array de los Enemigos
 
 /* ---------- Configuración inicial -------------- */
 public void setup() {
@@ -33,7 +33,7 @@ public void setup() {
   }
   // Enemigos
   for (int i=0; i<enemy.length; i++) {
-    enemy[i] = new Enemy((int)random(5, 65), (int)random(5, 35), 5, 1);//(int) random(12)); // (posX, posY, lado,velocidad)
+    enemy[i] = new Enemy((int)random(5, 65), (int)random(5, 35), 5, 1); // (posX, posY, lado,velocidad)
   }
 }
 /* ---------- Invocación de metodos ------------ */
@@ -77,7 +77,7 @@ public void draw() {
       family[i].colision(character);
       // Condicion de victoria
       if (family[i].getFamilyPoints() == 1 && character.getPoints() == 2920) {  
-        menus.displayWin(); // mensaje de que se gano el juego
+        menus.displayWin(); // mensaje de que se ganó el juego
       }
     }  
     break;
@@ -91,12 +91,12 @@ public void draw() {
     character.setNextPositionX(0);
     character.setNextPositionY(0);
     character.setPoints(0); // Reinicia los puntos del jugador en 0
-    // Reposiciona a la familiar 
+    // Reposiciona a los familiares
     for (int i=0; i<family.length; i++) {
       family[i].setPositionX((int)random(10, 73));
       family[i].setPositionY((int)random(10, 40));
     }
-    // Reposiciona a la enemigo
+    // Reposiciona a los enemigos
     for (int i=0; i<enemy.length; i++) {
       enemy[i].setPositionX((int)random(5, 65));
       enemy[i].setPositionY((int)random(5, 35));

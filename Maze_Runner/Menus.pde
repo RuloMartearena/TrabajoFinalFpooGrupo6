@@ -11,7 +11,7 @@ class Menus extends FrameObject {
   private color fontColor;
   /** Representa el atributo gif */
   private PImage[] gif;
-  /** Representa el numero de frames del Marcianito */
+  /** Representa el número de frames del Marcianito */
   private int numberOfFrames;
   /** Representa un atributo del tipo entero f */
   private int f;
@@ -64,7 +64,7 @@ class Menus extends FrameObject {
     textSize(15);
     text(Constants.INSTRUCTION_DEAD_OR_WIN, width/2-140, height-80);
     imageMode(CENTER); //imagen del marcianitooooo
-    image(gif[f], width/2, height/2, this.widthFrame, this.heightFrame); // posicion del gif o cantidad de frames
+    image(gif[f], width/2, height/2, this.widthFrame, this.heightFrame); // posicion del gif 
     f = f + 1;
     if (f == numberOfFrames) f = 0;
     this.widthFrame = 128;
@@ -108,7 +108,7 @@ class Menus extends FrameObject {
   public color getFontColor() {
     return this.fontColor;
   }
-  /** Cambia el valor de los numeros de frames del marcianito (gif de Winner) */
+  /** Cambia el valor del número de frames del marcianito (gif de Winner) */
   public void setNumberOfFrames(int numberOfFrames) {
     this.numberOfFrames = numberOfFrames; // Establece el valor de los numeros de frames
   }
